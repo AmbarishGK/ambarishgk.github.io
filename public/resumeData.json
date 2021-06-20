@@ -1,0 +1,195 @@
+{
+  "main": {
+    "name": "Ambarish G K",
+    "occupation": " Software Engineer",
+    "description": " currently employed by ",
+    "employer": "SmartHub.ai",
+    "jobDescription": "write, test & update code whilst I drink honey dipped cinnamon ginger tea",
+    "image": "profile_pic.jpg",
+    "bio": "I am an engineer at heart, with an entrepreneurial spirit, and a passion for solving problems. As a curious person, I have always ventured into early-stage startups where I can understand how ideas are born and help make them into reality, i.e, building something out of nothing. Learned valuable skills for professional and personal life in startups. I love trying to make implausible ideas work. Outside of work, most of my time is spent meeting and socializing with people, taking a hike with nature, a long motorcycling trip at dawn to drink chai, walking alongside the moon on the beach, watch the rain from the roof of the house,  play with animals (mostly dogs) etc etc.",
+    "contactmessage": "Wanna chat or grab coffee tea? contact me here",
+    "email": "ambarishgk@gmail.com",
+    "phone": "Will fill soon",
+    "address": {
+      
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "zip": "600017"
+    },
+    "website": "http://www.ambarishgk.com",
+    "resumedownload": "",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "http://facebook.com/",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/ambarishgk/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "http://instagram.com/",
+        "className": "fa fa-instagram"
+      },
+      {
+        "name": "stack-overflow",
+        "url": "https://stackoverflow.com/",
+        "className": "fa fa-stack-overflow"
+      },
+      {
+        "name": "github",
+        "url": "http://github.com/ambarishgk",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "I absolutely love computers and I'm really passionate about programming and technology!, I'm a tinkerer and am always interested in playing around with new technologies but these are the ones that have really won me over",
+    "education": [
+      {
+        "school": "SRM Valliammai Engineering College, Anna University",
+        "degree": "Bachelors in Electronics and Communication Engineering",
+        "graduated": "2016 - 2020 FT",
+        "description": "My college days were spent creating and implementing various ideas of peers and mine. Some of my achievements.\nReceived the most outgoing student of the year, participated and won many inter and intra college events. Held leadership roles in various clubs & societies\nEcell leader - representing SRM VEC in state of tamil nadu\nVP (2018-2019) & HR (2019-2020) for  E-cell SRM VEC\nJoint secretary for computer society of india kanchipuram student branch 2018-19\nEvent manager for computer society of india kanchipuram student branch 2019-20\nTech leader and student representative for IETE SRM VEC\nMentor robotics club"
+      },
+      {
+        "school": "Chettinad Vidyashram",
+        "degree": "Higher Secondary School, CS",
+        "graduated": "Grad 2016",
+        "description": "Did my high schooling here. Made great friends who helped me understand what I have a knack for. I built and coded an Arduino Robot to navigate obstacle courses,  C++ programming for data structures, and much more. Participated in inter school tech wiz competitions."}
+    ],
+    "work": [
+      {
+        "company": "SmartHub.ai",
+        "title": "Software Engineer",
+        "website": "",
+        "years": "May 2021 - Present",
+        "description": "At Smarthub.ai we are developing a software-defined edge platform that offers unparalleled support for the widest variety of devices, sensors to be managed, at scale, and consistent with enterprise policies.  The platform is capable of running in private, public clouds, hybrid, distributed, and on-premises. As a member of a very small but talented and experienced team, I work as a software engineer to create a platform-independent solution for one product. This currently consists of working with  Python, C, bash/sh, PowerShell, Linux and Windows, docker containers, etc.\n"},
+      {
+        "company": "Predigle India Pvt ltd",
+        "title": "Software Engineer",
+        "website": "",
+        "years": "September 2020 - April 2021",
+        "description": "With position as tech lead of the Byonic project, I was in charge of various duties such as code reviews, task allocation, bug fixes and deployment in staging. Worked in close cooperation with clients and project managers, functional team members to form a team effort in development.\n1. SaaS: Implemented REST APIs for 10M+ records in B2B martech integrated with ML.  Migrated from legacy SQL to ORM. Deployed code with nohup. Involved in Analysis, Designing, Implementation phases of the SDLC life cycle.\n2. Security & Email micro-service:  Configured security features using Form Based Authentication and Role &Org Based Authorization.  Created SMTP micro-service to automate system generated emails for authentication\n3. Tech Stack: Python, flask, Typescript, Angular, MySQL, sqlalchemy, nginx, mongodb, scikit-learn,pandas, POSTMAN, SoapUI, git, JIRA and Confluence"
+      },
+      {
+        "company": "Generation Infinite Machines",
+        "title": "Systems Software Engineer - Part time consultant",
+        "website": "",
+        "years": "March 2020 - March 2021",
+        "description": "As a part-time consultant worked with the core systems engineering team, implemented prototype edge solutions on ARM Cortex for Smart Kitchen Appliance which includes fetching & processing data from the connected Things. AWS to Edge with AWS IoT Greengrass: Using AWS Greengrass created and maintained 100+ devices & subscriptions.  FOTA with MQTT to update core devices.  Deployed AWS lambda to act locally inside the edge.  Setup and Optimization:  Built in-house solutions to automate setting-up core from 1.5 days to 1 hour. Optimized AWS Lambda by reducing latency to 1/4th of normal operation. Data modeling:  Created the data models for products to keep track of the machine-customer life cycle. Tech Stack: Python, AWS, Kivy, Bash, SSH, Linux, MySQL, pandas."},
+      {
+        "company": "Asimov Global Technologies (closed due to covid)",
+        "title": "Technical Executive - Freelancer",
+        "website": "",
+        "years": "January 2020 - July 2020",
+        "description": "Here I was in charge of various duties involved in teaching college students from remote areas about robotics and Ai/ML. I performed a varied range of tasks including, but not limited to, Creating coursework on Robotics, Artificial intelligence, and Game development for undergraduate STEM students.  Mentored undergraduate students. Also taught primary and secondary students about software development. Also helped creating POC for covid awareness and alert bots."},
+      {
+        "company": "Alphabt.ai",
+        "title": "ML/AI - Research Intern",
+        "website": "",
+        "years": "May 2019 - August 2019",
+        "description": "Joined as a research intern for an industrial robotics project. Assigned with various duties of setting up the firmware for Jetson Nano and integrating ROS and ZED stereocam. Wrote code to detect Datamatrix using pylibdmtx for asset tracking, identification, and data-driven applications of the objects going on Conveyor Belts in warehouse sites.  "
+      }
+    ],
+    "skills": [
+      
+      {
+        "name": "Python",
+        "description": "By far my favorite and got-to language to work from web dev to ML/AI. Part of pycon india community and love volunteering.",
+        "image": "python.png"
+      },
+      {
+        "name": "Typescript",
+        "description": "I used Typescript for Angular frontend projects. It is the frontend language I am most familiar with and can therefore design more quickly than with others.",
+        "image": "typescript.svg"
+      },
+      
+      {
+        "name": "Angular",
+        "description": "I enjoy Angular for it's full-fledged framework capability and its ability to get a full stack project well structured and easy to read.",
+        "image": "angular.png"
+      },
+      {
+        "name": "Git",
+        "description": "Git is my go-to version control at work. I find it useful for collaboration and effortless integration while in a team. Like reviews for Pull-Requests across branches",
+        "image": "git.jpg"
+      },
+      {
+        "name": "AWS",
+        "description": "I am good with the AWS services such as EC2, S3, Lambda, ApiGateway, greengrass, dynamodb, Iot etc. ",
+        "image": "aws.png"
+      },
+      {
+        "name": "Scikit-learn",
+        "description": "Worked with it on multiple occasions for the freelance projects. Simplest ML prototyping tool with help of pandas, numpy, matplotlib.",
+        "image": "scikit.png"
+      },
+      
+      {
+        "name": "MongoDB",
+        "description": "I have used many different database systems and am better educated and experienced with Relational Databases. However, for many applications, the ease of use of MongoDB better suits my needs and it is much more enjoyable to work with",
+        "image": "mongo.jpg"
+      },
+      {
+        "name": "Flask",
+        "description": "I use Flask as my backend framework. Like it due to its good learning curve and ease. I also appreciate its integration frontend frameworks with REST apis. Though have started with FASTApi.",
+        "image": "flask.png"
+      }
+    ],
+    "others": [
+      {
+        "company": "Yoga & Meditation",
+        "description": "Yoga is the first thing I do at morning while Meditation is the last thing I do at night. It puts me at ease. As my uncle is a yoga teacher, I have been doing it for around 12+ years. Have attended and taught multiple yoga sessions."},
+      {
+        "company": "Basketball",
+        "description": "Love basketball with all my heart, Have been playing it for a long time. It has relieved stress, worries and to helped me stay confident. At school spent more time at basketball court than in the class. Always up for a game, doesn't matter who"}
+    ]
+
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Canadian Wanderlust",
+        "category": "My Travel Blog for my post-university travels",
+        "image": "canadian-wanderlust.jpg",
+        "url": "https://www.canadianwanderlust.com"
+      },
+      {
+        "title": "Fury Fighting Gear",
+        "category": "(offline now) A fighting gear company I started",
+        "image": "fury-fighting-gear.jpg",
+        "url": "http://www.timbakerdev.com"
+      },
+      {
+        "title": "Original Thai Food",
+        "category": "Website I built for a restaurant I like in Thailand",
+        "image": "original-thai-food.jpg",
+        "url": "https://original-thai-food.herokuapp.com/index.html"
+      },
+      {
+        "title": "Resume Website",
+        "category": "A React based resume website template",
+        "image": "resume-website.jpg",
+        "url": "https://github.com/tbakerx/react-resume-template"
+      },
+      {
+        "title": "Smirkspace",
+        "category": "(MVP Only) A React and Meteor based chat University project.",
+        "image": "smirkspace.jpg",
+        "url": "http://www.smirkspace.com"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "I have had the opportunity to work with Tim on multiple occasions which has always been a pleasure. He is driven and motivated with a consistently positive attitude. Tim excels at communicating with others and is always willing to work hard until he solves the problem at hand.",
+        "user": "Alastair Beaumont - Web Developer at AppColony"
+      }
+    ]
+  }
+}
