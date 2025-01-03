@@ -3,11 +3,11 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: You
-middle_name: R.
-last_name: Name
+first_name: Ambarish
+middle_name:
+last_name: G K
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  Best way to reach me is through LinkedIn
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -87,8 +87,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Ambarish # blog_name will be displayed in your blog page
+blog_description: List of articles I have written
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -125,10 +125,10 @@ disqus_shortname: al-folio # put your disqus shortname
 external_sources:
   - name: medium.com
     rss_url: https://medium.com/@al-folio/feed
-  - name: Google Blog
+  - name: Why should you start writing?
     posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
+      - url: https://medium.com/@AmbarishGK/why-should-you-start-writing-8a1f49bef26e
+        published_date: 2021-09-05
 
 # -----------------------------------------------------------------------------
 # Newsletter
