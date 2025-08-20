@@ -7,19 +7,25 @@ subtitle: <a href='https://www.sjsu.edu/researchfoundation/'>San Jose State Univ
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   more_info: >
     <p>San José State University</p>
     <p>One Washington Square</p>
     <p>San Jose, CA 95192-0009</p>
 
-news: false # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: false
+selected_papers: false
+social: true
 ---
 
-Hi, again. I am from Chennai, India where I did my schooling and bachelors. It is a beautiful city with amazing food and beaches where I spent most of days watching sunrises, food tasting and bicycling. Then after bachelors I moved to bangalore for few years building solutions for smarter kitchen, market analysis and even IoT fleet managment[subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi, I’m a graduate student at **San José State University**, currently pursuing my master’s degree in Computer Engineering.  
+I was born and raised in **Chennai, India**, where I did my schooling and bachelor’s degree. Growing up in a vibrant city with beautiful beaches and incredible food shaped much of who I am today—I often spent my mornings cycling along the coast and watching sunrises.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+After completing my bachelors, I moved to **Bangalore** and worked for a few years on projects ranging from **smart kitchen solutions** to **IoT fleet management** and **market analytics**. These experiences gave me a strong foundation in building end-to-end solutions and understanding how technology intersects with everyday life.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+At SJSU, my research and projects focus on **AI/ML, robotics, computer vision, and IoT**. I’ve worked on projects involving **SLAM with ZED cameras and LiDAR**, **image forensics for detecting malicious content**, and **LLM-based document assistants**. Alongside my academic journey, I enjoy writing about technology and personal development on **Medium** and creating project walkthroughs on my **YouTube channel**.
+
+When I’m not coding or experimenting with new tools, you’ll probably find me **training, exploring healthy cooking**, or **diving into books on psychology and strategy**.
+
+---
+ Feel free to connect with me if you’re interested in research collaborations, internships, or tech discussions!
