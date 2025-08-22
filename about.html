@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Ambarish G K</title>
+  <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">AGK</a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a class="active" href="/about.html">About</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="section">
+      <h1>About</h1>
+      <p>I’m a curious thinker and hands-on builder. I enjoy problems where different technologies meet — getting sensors to agree, optimizing software pipelines, and designing tools that actually ship.</p>
+      <p>Currently pursuing MS in Computer Engineering at SJSU. Interests: AI/ML, robotics, IoT, and scalable software systems.</p>
+
+      <div class="two">
+        <article class="card">
+          <h3>Focus Areas</h3>
+          <ul>
+            <li>Perception &amp; SLAM</li>
+            <li>Sensor Fusion</li>
+            <li>Agentic AI tools</li>
+            <li>Systems Engineering</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Contact</h3>
+          <p><strong>Email:</strong> ambarishgk[at]gmail[dot]com</p>
+          <p><a href="https://github.com/AmbarishGK" target="_blank" rel="noopener">GitHub</a> ·
+             <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">LinkedIn</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

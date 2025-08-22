@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ambarish G K — Portfolio</title>
+  <meta name="description" content="Ambarish G K — curious builder focused on practical systems across software, AI, and robotics." />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Font Awesome 4 (matches your icon classes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">AGK</a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" id="nav">
+      <a class="active" href="/">Home</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <!-- HERO -->
+    <section class="hero">
+      <!-- Put your photo at /assets/img/me.png (or change the src) -->
+      <img class="avatar" src="/assets/img/me.png" alt="Headshot of Ambarish G K" />
+      <div class="intro">
+        <h1>Ambarish G K</h1>
+        <p class="tagline">
+          I like turning messy problems into working systems across software, AI, and robotics.
+          Recent work spans sensor fusion, vision-guided robots, agentic AI tools, and meeting assistants that capture action items.
+        </p>
+        <p class="email">📧 ambarishgk[at]gmail[dot]com</p>
+        <p class="links">
+          <a href="https://github.com/AmbarishGK" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+          <a href="https://www.youtube.com/@AmbarishGK" target="_blank" rel="noopener"><i class="fa fa-youtube-play"></i> YouTube</a>
+          <a href="/Ambarish_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="grid cards">
+        <article class="card">
+          <h3>Programming</h3>
+          <div class="chips"><span>Python</span><span>C++</span><span>Go</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>C</span></div>
+        </article>
+        <article class="card">
+          <h3>AI &amp; ML</h3>
+          <div class="chips"><span></span><span>PyTorch</span><span>Keras</span><span>YOLO</span><span>SLAM</span><span>LLM</span><span>VLM</span></div>
+        </article>
+        <article class="card">
+          <h3>Robotics</h3>
+          <div class="chips"><span>ROS 2</span><span>Rviz</span><span>Gazebo</span><span>Issac Sim</span><span>Sensor Fusion</span><span>LiDAR</span><span>Stereo Cameras</span><span>NVIDIA Jetson</span></div>
+        </article>
+        <article class="card">
+          <h3>Systems &amp; Tools</h3>
+          <div class="chips"><span>Linux</span><span>Docker</span><span>Git</span><span>AWS</span><span>GCP</span><span>MySQL</span><span>MongoDB</span></div>
+        </article>
+        <article class="card">
+          <h3>Embedded</h3>
+          <div class="chips"><span>SPI</span><span>CAN</span><span>UART</span><span>NXP</span><span>FreeRTOS</span><span>I²C</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="section">
+      <h2>Featured Projects</h2>
+
+      <!-- Use the wide responsive grid -->
+      <div class="grid cards">
+
+     <article class="card">
+      <h3>Robotic Oximeter Placement (Shorts)</h3>
+      <div class="video-embed vertical">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/hojM0j5xG-c?modestbranding=1&rel=0&playsinline=1"
+    title="Robotic Oximeter Placement (Shorts)"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</div>
+      <p>Imitation learning + transformers to control a robotic arm for safe placement.</p>
+      <p class="tech">Python · VLM · Transformers · LeRobot</p>
+    </article>
+
+        <article class="card">
+          <h3>Multi-Modal Sensor Fusion</h3>
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/9QC_FBc9_o8"
+              title="Autonmous cart, sensor fusion"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <p>LiDAR + stereo for real-time mapping on NVIDIA Orin; improved navigation accuracy.</p>
+          <p class="tech">ROS 2 · ORB-SLAM3 · NvBlox · LiDAR</p>
+        </article>
+
+        <article class="card">
+          <h3>Parking Detection</h3>
+          <p>YOLOv8 model to detect available parking spaces (~95% accuracy on PKLot).</p>
+          <p class="tech">YOLOv8 · TensorFlow</p>
+        </article>
+
+      </div>
+
+      <p class="more"><a href="/portfolio.html">See all projects →</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ambarish G K</p>
+  </footer>
+
+  <script>
+    // mobile menu
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

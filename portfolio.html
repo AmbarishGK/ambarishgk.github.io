@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Ambarish G K</title>
+  <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">AGK</a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" id="nav">
+      <a href="/">Home</a>
+      <a class="active" href="/portfolio.html">Portfolio</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="section">
+      <h1>Projects</h1>
+
+      <div class="grid cards">
+        <article class="card">
+          <h3>Robotic Oximeter Placement</h3>
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/9QC_FBc9_o8"
+              title="Robotic Oximeter Placement"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <p>Imitation learning (ACT) with VLMs to control a multi-DOF arm for safe placement.</p>
+          <p class="tech">Python · VLM · Transformers · LeRobot</p>
+        </article>
+
+        <article class="card">
+          <h3>Multi-Modal Sensor Fusion</h3>
+          <p>LiDAR + stereo cameras for real-time 3D mapping on NVIDIA Orin.</p>
+          <p class="tech">ROS 2 · ORB-SLAM3 · NvBlox · LiDAR</p>
+        </article>
+
+        <article class="card">
+          <h3>Parking Detection</h3>
+          <p>YOLOv8 pipeline for real-time parking slot detection (PKLot ~95%).</p>
+          <p class="tech">YOLOv8 · TensorFlow</p>
+        </article>
+
+        <article class="card">
+          <h3>PS5 DualSense ROS2 Wrapper</h3>
+          <p>Haptics + sensors + touchpad for richer robot teleop.</p>
+          <p class="tech">ROS 2 · C++ · Python</p>
+        </article>
+
+        <article class="card">
+          <h3>IoT Trojan Image Scanner</h3>
+          <p>Detects trojanized images via anomaly and file-integrity analysis.</p>
+          <p class="tech">Python · OpenCV</p>
+        </article>
+
+        <article class="card">
+          <h3>Aether — Meeting Summarizer</h3>
+          <p>Summarizes meetings, extracts code, and creates action items with LLMs.</p>
+          <p class="tech">Python · LLMs</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
