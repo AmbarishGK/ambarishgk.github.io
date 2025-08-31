@@ -204,3 +204,50 @@ a:hover { color: #217ee7; }
   color:#e8e8e8;
 }
 :root[data-theme="dark"] .theme-toggle:hover{ background: rgba(255,255,255,.18); }
+
+/* ===== Floating "Contact me" button (FAB) ===== */
+.fab-contact {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .75rem 1.1rem;       /* larger padding */
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;              /* slightly bigger font */
+  line-height: 1;
+  background: rgba(0,0,0,.10);  /* translucent chip */
+  color: #222;
+  backdrop-filter: saturate(160%) blur(6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+}
+.fab-contact:hover { background: rgba(0,0,0,.18); box-shadow: 0 10px 28px rgba(0,0,0,.16); }
+.fab-contact:active { transform: translateY(1px) scale(.98); }
+
+/* icon bigger too */
+.fab-contact .msg-icon { width: 22px; height: 22px; flex: 0 0 22px; display: inline-block; }
+.fab-contact .fab-label { font-size: 1rem; }
+
+/* Dark theme */
+:root[data-theme="dark"] .fab-contact {
+  background: rgba(255,255,255,.10);
+  color: #e8e8e8;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+:root[data-theme="dark"] .fab-contact:hover { background: rgba(255,255,255,.18); }
+
+/* Mobile: keep bottom-right, shrink horizontal padding, hide text */
+@media (max-width: 900px) {
+  .fab-contact { right: 16px; bottom: 16px; padding: .75rem; gap: 0; }
+  .fab-contact .fab-label {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
+  .fab-contact .msg-icon { width: 26px; height: 26px; } /* even larger tap target */
+}
