@@ -251,3 +251,9 @@ a:hover { color: #217ee7; }
   }
   .fab-contact .msg-icon { width: 26px; height: 26px; } /* even larger tap target */
 }
+
+#experience .grid.cards {
+  grid-template-columns: 1fr;    /* one column only */
+  max-width: 800px;              /* nicer reading width */
+  margin: 0 auto;                /* centered */
+}
