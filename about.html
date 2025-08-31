@@ -1,57 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About — Ambarish G K</title>
-  <link rel="stylesheet" href="/main.css" />
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Init theme before CSS -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme','dark');
+      } else {
+        document.documentElement.setAttribute('data-theme','light');
+      }
+    })();
+  </script>
+
+  <!-- Critical inline CSS -->
+  <style>
+    .site-header{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem}
+    .site-nav{display:flex;gap:1rem}
+    .logo{font-weight:700;letter-spacing:.5px}
+    .theme-toggle{border:none;background:rgba(0,0,0,.10);border-radius:10px;padding:.35rem .55rem;line-height:1;font-size:.95rem;backdrop-filter:saturate(160%) blur(6px)}
+    .menu-toggle{border:1px solid #ddd;background:none;border-radius:8px;padding:.3rem .55rem;font-size:1.2rem}
+    .right-ctas{display:flex;gap:.5rem;align-items:center}
+
+    .hero{display:grid;gap:1rem;justify-items:center;margin-top:1rem}
+    .intro{max-width:780px;background:#fff;border-radius:14px;padding:1.2rem 1.4rem;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+
+    :root[data-theme="dark"] .intro{background:#1e1f23;box-shadow:none}
+    :root[data-theme="dark"] .site-header{background:rgba(20,22,25,.85)}
+    :root[data-theme="dark"] .theme-toggle{background:rgba(255,255,255,.10)}
+  </style>
+
+  <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="main.css"></noscript>
 </head>
 <body>
   <header class="site-header">
     <a class="logo" href="/">AGK</a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
     <nav class="site-nav" id="nav">
       <a href="/">Home</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a class="active" href="/about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a class="active" aria-current="page" href="about.html">About</a>
+
     </nav>
+
+    <div class="right-ctas">
+      <button class="theme-toggle" id="themeToggle" aria-label="Current theme: Light. Switch to dark">🌞</button>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
   </header>
 
   <main id="content">
-    <section class="section">
-      <h1>About</h1>
-      <p>I’m a curious thinker and hands-on builder. I enjoy problems where different technologies meet — getting sensors to agree, optimizing software pipelines, and designing tools that actually ship.</p>
-      <p>Currently pursuing MS in Computer Engineering at SJSU. Interests: AI/ML, robotics, IoT, and scalable software systems.</p>
+    <section class="section hero">
+      <div class="intro">
+        <h1>About</h1>
+        <p>I’m a curious thinker and hands-on builder. I enjoy problems where different technologies meet — getting sensors to agree, optimizing software pipelines, and designing tools that actually ship.</p>
+        <p>Currently pursuing MS in Computer Engineering at SJSU. Interests: AI/ML, robotics, IoT, and scalable software systems.</p>
 
-      <div class="two">
-        <article class="card">
-          <h3>Focus Areas</h3>
-          <ul>
-            <li>Perception &amp; SLAM</li>
-            <li>Sensor Fusion</li>
-            <li>Agentic AI tools</li>
-            <li>Systems Engineering</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Contact</h3>
-          <p><strong>Email:</strong> ambarishgk[at]gmail[dot]com</p>
-          <p><a href="https://github.com/AmbarishGK" target="_blank" rel="noopener">GitHub</a> ·
-             <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">LinkedIn</a></p>
-        </article>
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> <a href="mailto:ambarishgk@gmail.com">ambarishgk@gmail.com</a></p>
+        <p class="links">
+          <a href="https://github.com/AmbarishGK" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34 .73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.78-1.35-1.78-1.1-.75 .08-.74 .08-.74 1.22 .09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01 .11-.79 .42-1.32 .76-1.63-2.67-.3-5.48-1.34-5.48-5.95 0-1.31 .47-2.38 1.24-3.22-.12-.3-.54-1.52 .12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23 .66 1.64 .24 2.86 .12 3.16 .78 .84 1.24 1.91 1.24 3.22 0 4.62-2.82 5.65-5.5 5.95 .43 .37 .81 1.1 .81 2.22v3.29c0 .32 .21 .7 .82 .58A12 12 0 0 0 12 .5z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.46V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://www.youtube.com/@AmbarishGK" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2s-.23-1.64-.95-2.36c-.91-.95-1.94-.95-2.41-1-3.37-.24-8.43-.24-8.43-.24h-.01s-5.06 0-8.43 .24c-.47 .05-1.5 .06-2.41 1C.73 4.56 .5 6.2 .5 6.2S.27 8.13 .27 10.05v1.87c0 1.92 .22 3.84 .22 3.84s.23 1.63 .95 2.36c.91 .95 2.11 .92 2.64 1.02 1.92 .18 8.16 .24 8.16 .24s5.07-.01 8.44-.25c.47-.05 1.5-.06 2.41-1 .72-.72 .95-2.36 .95-2.36s.22-1.92 .22-3.84v-1.87c0-1.92-.22-3.85-.22-3.85zM9.75 14.34V7.61l6.29 3.37-6.29 3.36z"/></svg>
+            YouTube
+          </a>
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
+
   <script>
     const btn = document.querySelector('.menu-toggle');
     const nav = document.getElementById('nav');
     btn.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    }, { passive: true });
+
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('themeToggle');
+    function setTheme(mode){
+      document.documentElement.setAttribute('data-theme', mode);
+      localStorage.setItem('theme', mode);
+      toggle.textContent = mode === 'dark' ? '🌙' : '🌞';
+      toggle.setAttribute('aria-label', mode === 'dark'
+        ? 'Current theme: Dark. Switch to light'
+        : 'Current theme: Light. Switch to dark'
+      );
+    }
+    toggle.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') || 'light';
+      setTheme(cur === 'light' ? 'dark' : 'light');
+    });
+    (function initBtn(){
+      const mode = document.documentElement.getAttribute('data-theme') || 'light';
+      setTheme(mode);
+    })();
   </script>
 </body>
 </html>
