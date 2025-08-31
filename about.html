@@ -37,9 +37,32 @@
     :root[data-theme="dark"] .theme-toggle{background:rgba(255,255,255,.10)}
   </style>
 
+  <!-- FAB fallback (ensures correct size/position even if main.css loads late) -->
+  <style id="fab-inline-fix">
+  .fab-contact{
+    position: fixed; right: 20px; bottom: 20px; z-index: 1100;
+    display: inline-flex; align-items: center; gap: .65rem;
+    padding: .65rem .9rem; border: none; border-radius: 999px;
+    text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1;
+    background: rgba(0,0,0,.10); color: inherit; backdrop-filter: saturate(160%) blur(6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  }
+  .fab-contact .msg-icon { width: 20px; height: 20px; flex: 0 0 20px; display: inline-block; }
+  .fab-contact .fab-label { font-size: 1rem; }
+  @media (max-width: 900px) {
+    .fab-contact { right: 16px; bottom: 16px; padding: .75rem; gap: 0; }
+    .fab-contact .fab-label {
+      position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
+      clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+    }
+    .fab-contact .msg-icon { width: 26px; height: 26px; }
+  }
+  </style>
+
   <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="main.css"></noscript>
 </head>
+
 <body>
   <header class="site-header">
     <a class="logo" href="/">AGK</a>
@@ -84,7 +107,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p>
   <!-- Floating Contact FAB -->
   <a
     class="fab-contact"
@@ -98,7 +120,7 @@
     <span class="fab-label">Contact me</span>
   </a>
 
-  </footer>
+  <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
 
   <script>
     const btn = document.querySelector('.menu-toggle');
