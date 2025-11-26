@@ -129,6 +129,12 @@
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2s-.23-1.64-.95-2.36c-.91-.95-1.94-.95-2.41-1-3.37-.24-8.43-.24-8.43-.24h-.01s-5.06 0-8.43 .24c-.47 .05-1.5 .06-2.41 1C.73 4.56 .5 6.2 .5 6.2S.27 8.13 .27 10.05v1.87c0 1.92 .22 3.84 .22 3.84s.23 1.63 .95 2.36c.91 .95 2.11 .92 2.64 1.02 1.92 .18 8.16 .24 8.16 .24s5.07-.01 8.44-.25c.47-.05 1.5-.06 2.41-1 .72-.72 .95-2.36 .95-2.36s.22-1.92 .22-3.84v-1.87c0-1.92-.22-3.85-.22-3.85zM9.75 14.34V7.61l6.29 3.37-6.29 3.36z"/></svg>
             YouTube
           </a>
+          <a href="https://medium.com/@Ambarishgk" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 1043.63 592.71" aria-hidden="true">
+              <path d="M588.67 296.35c0 163.68-131.77 296.36-294.33 296.36S0 460.03 0 296.35C0 132.66 131.77 0 294.34 0s294.33 132.66 294.33 296.35zM829.59 296.35c0 154.14-65.89 279.07-147.1 279.07s-147.09-124.93-147.09-279.07c0-154.14 65.88-279.07 147.09-279.07s147.1 124.93 147.1 279.07zM1043.63 296.35c0 142.71-22.93 258.47-51.22 258.47s-51.22-115.76-51.22-258.47c0-142.71 22.93-258.47 51.22-258.47s51.22 115.76 51.22 258.47z"/>
+            </svg>
+            Medium
+          </a>
           <a href="assets/Ambarish_Resume.pdf" target="_blank" rel="noopener">Resume</a>
         </p>
       </div>
@@ -166,28 +172,7 @@
     <!-- FEATURED PROJECTS -->
     <section class="section">
       <h2>Featured Projects</h2>
-      <div class="grid cards">
-        <article class="card">
-          <h3>Robotic Oximeter Placement (Shorts)</h3>
-          <lite-youtube videoid="hojM0j5xG-c" params="modestbranding=1&rel=0&playsinline=1" class="vertical"></lite-youtube>
-          <p>Imitation learning + transformers to control a robotic arm for safe placement.</p>
-          <p class="tech">Python · VLM · Transformers · LeRobot</p>
-        </article>
-
-        <article class="card">
-          <h3>Multi-Modal Sensor Fusion</h3>
-          <lite-youtube videoid="9QC_FBc9_o8" params="modestbranding=1&rel=0&playsinline=1"></lite-youtube>
-          <p>LiDAR + stereo for real-time mapping on NVIDIA Orin; improved navigation accuracy.</p>
-          <p class="tech">ROS 2 · ORB-SLAM3 · NvBlox · LiDAR</p>
-        </article>
-
-        <article class="card">
-          <h3>Parking Detection</h3>
-          <p>YOLOv8 model to detect available parking spaces (~95% accuracy on PKLot).</p>
-          <p class="tech">YOLOv8 · TensorFlow</p>
-        </article>
-      </div>
-
+      <div class="grid cards" id="featured-projects"></div>
       <p class="more"><a class="button" href="portfolio.html">See all projects →</a></p>
     </section>
   </main>
@@ -207,60 +192,9 @@
 
   <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
 
-  <!-- Lite YouTube Web Component -->
-  <script type="module">
-    class LiteYouTube extends HTMLElement {
-      connectedCallback() {
-        const id = this.getAttribute('videoid');
-        const params = this.getAttribute('params') || '';
-        const poster = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
-        const vertical = this.classList.contains('vertical');
-        this.innerHTML =
-          '<div class="lyt ' + (vertical ? 'vertical' : '') + '" part="button">' +
-            '<img src="' + poster + '" alt="YouTube poster" loading="lazy" decoding="async">' +
-            '<button aria-label="Play video"></button>' +
-          '</div>';
-        this.querySelector('.lyt').addEventListener('click', () => {
-          const src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) +
-            "?autoplay=1&playsinline=1" + (params ? "&" + params : "");
-          this.innerHTML =
-            '<iframe title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy" src="' + src + '"></iframe>';
-        }, { passive: true });
-      }
-    }
-    customElements.define('lite-youtube', LiteYouTube);
-  </script>
-
-  <script>
-    // Mobile menu
-    const btn = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('nav');
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }, { passive: true });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme toggle (icon reflects current theme)
-    const toggle = document.getElementById('themeToggle');
-    function setTheme(mode){
-      document.documentElement.setAttribute('data-theme', mode);
-      localStorage.setItem('theme', mode);
-      toggle.textContent = mode === 'dark' ? '🌙' : '🌞';
-      toggle.setAttribute('aria-label', mode === 'dark'
-        ? 'Current theme: Dark. Switch to light'
-        : 'Current theme: Light. Switch to dark'
-      );
-    }
-    toggle.addEventListener('click', () => {
-      const cur = document.documentElement.getAttribute('data-theme') || 'light';
-      setTheme(cur === 'light' ? 'dark' : 'light');
-    });
-    (function initBtn(){
-      const mode = document.documentElement.getAttribute('data-theme') || 'light';
-      setTheme(mode);
-    })();
-  </script>
+  <script src="assets/data/projects.js"></script>
+  <script src="assets/js/lite-youtube.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/render-projects.js" defer></script>
 </body>
 </html>
