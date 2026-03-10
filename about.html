@@ -1,80 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AGK About</title>
+  <title>About  |  Ambarish G K</title>
+  <meta name="description"
+    content="Learn about Ambarish G K  |  robotics & AI engineer, mentor, and content creator. My journey, teaching philosophy, and how I can help." />
+  <meta name="keywords" content="Ambarish G K about, robotics engineer, AI mentor, SJSU, teacher, content creator" />
+  <link rel="canonical" href="https://ambarishgk.me/about.html" />
   <link rel="icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Init theme before CSS -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="About  |  Ambarish G K" />
+  <meta property="og:description" content="Robotics & AI engineer, mentor, and content creator." />
+  <meta property="og:url" content="https://ambarishgk.me/about.html" />
+  <meta property="og:image" content="https://ambarishgk.me/assets/img/me.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@AmbarishGK1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <script>
-    (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme','dark');
+    (function () {
+      var s = localStorage.getItem('theme');
+      if (s === 'dark' || (!s && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
-        document.documentElement.setAttribute('data-theme','light');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
   </script>
 
-  <!-- Critical inline CSS -->
   <style>
-    .site-header{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem}
-    .site-nav{display:flex;gap:1rem}
-    .logo{font-weight:700;letter-spacing:.5px}
-    .theme-toggle{border:none;background:rgba(0,0,0,.10);border-radius:10px;padding:.35rem .55rem;line-height:1;font-size:.95rem;backdrop-filter:saturate(160%) blur(6px)}
-    .menu-toggle{border:1px solid #ddd;background:none;border-radius:8px;padding:.3rem .55rem;font-size:1.2rem}
-    .right-ctas{display:flex;gap:.5rem;align-items:center}
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .8rem 1rem
+    }
 
-    .hero{display:grid;gap:1rem;justify-items:center;margin-top:1rem}
-    .intro{max-width:780px;background:#fff;border-radius:14px;padding:1.2rem 1.4rem;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .site-nav {
+      display: flex;
+      gap: .6rem
+    }
 
-    :root[data-theme="dark"] .intro{background:#1e1f23;box-shadow:none}
-    :root[data-theme="dark"] .site-header{background:rgba(20,22,25,.85)}
-    :root[data-theme="dark"] .theme-toggle{background:rgba(255,255,255,.10)}
+    .logo {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem
+    }
+
+    .theme-toggle {
+      border: none;
+      background: rgba(0, 0, 0, .08);
+      border-radius: 10px;
+      padding: .35rem .55rem;
+      line-height: 1;
+      font-size: .95rem;
+      backdrop-filter: saturate(160%) blur(6px)
+    }
+
+    .menu-toggle {
+      border: 1px solid #ddd;
+      background: none;
+      border-radius: 8px;
+      padding: .3rem .55rem;
+      font-size: 1.2rem
+    }
+
+    .right-ctas {
+      display: flex;
+      gap: .5rem;
+      align-items: center
+    }
+
+    .loader-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f5f6fa;
+      transition: opacity .45s ease, visibility .45s ease
+    }
+
+    .loader-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none
+    }
+
+    .loader-logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #3c58a6;
+      animation: pulse 1.2s ease-in-out infinite
+    }
+
+    .loader-tagline {
+      margin-top: .5rem;
+      font-size: .85rem;
+      color: #888;
+      letter-spacing: .5px
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: .4;
+        transform: scale(.96)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    :root[data-theme="dark"] .loader-overlay {
+      background: #15171a
+    }
+
+    :root[data-theme="dark"] .loader-logo {
+      color: #8bb8ff
+    }
+
+    :root[data-theme="dark"] .intro {
+      background: #1e1f23;
+      box-shadow: none
+    }
+
+    :root[data-theme="dark"] .site-header {
+      background: rgba(20, 22, 25, .92)
+    }
+
+    :root[data-theme="dark"] .theme-toggle {
+      background: rgba(255, 255, 255, .10)
+    }
   </style>
 
-  <!-- FAB fallback (ensures correct size/position even if main.css loads late) -->
   <style id="fab-inline-fix">
-  .fab-contact{
-    position: fixed; right: 20px; bottom: 20px; z-index: 1100;
-    display: inline-flex; align-items: center; gap: .65rem;
-    padding: .65rem .9rem; border: none; border-radius: 999px;
-    text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1;
-    background: rgba(0,0,0,.10); color: inherit; backdrop-filter: saturate(160%) blur(6px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  }
-  .fab-contact .msg-icon { width: 20px; height: 20px; flex: 0 0 20px; display: inline-block; }
-  .fab-contact .fab-label { font-size: 1rem; }
-  @media (max-width: 900px) {
-    .fab-contact { right: 16px; bottom: 16px; padding: .75rem; gap: 0; }
-    .fab-contact .fab-label {
-      position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
-      clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+    .fab-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1100;
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: .65rem .9rem;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      background: rgba(0, 0, 0, .08);
+      color: inherit;
+      backdrop-filter: saturate(160%) blur(6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .10)
     }
-    .fab-contact .msg-icon { width: 26px; height: 26px; }
-  }
+
+    .fab-contact .msg-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      display: inline-block
+    }
+
+    .fab-contact .fab-label {
+      font-size: 1rem
+    }
+
+    @media(max-width:900px) {
+      .fab-contact {
+        right: 16px;
+        bottom: 16px;
+        padding: .75rem;
+        gap: 0
+      }
+
+      .fab-contact .fab-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0
+      }
+
+      .fab-contact .msg-icon {
+        width: 26px;
+        height: 26px
+      }
+    }
   </style>
 
   <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="main.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="main.css">
+  </noscript>
 </head>
 
 <body>
+  <div class="loader-overlay" id="loader">
+    <div class="loader-logo">AGK</div>
+    <div class="loader-tagline">Robotics · AI · Builder · Mentor</div>
+  </div>
+
   <header class="site-header">
     <a class="logo" href="/">AGK</a>
-
     <nav class="site-nav" id="nav">
       <a href="/">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="experience.html">Experience</a>
+      <a href="portfolio.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="videos.html">Videos</a>
       <a class="active" aria-current="page" href="about.html">About</a>
-
     </nav>
-
     <div class="right-ctas">
       <button class="theme-toggle" id="themeToggle" aria-label="Current theme: Light. Switch to dark">🌞</button>
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -83,49 +237,130 @@
 
   <main id="content">
     <section class="section hero">
-      <div class="intro">
-        <h1>About</h1>
-        <p>I like working on real-world problems where software has to talk to hardware, deal with noisy data, and still be reliable. That has led me to projects in robotics perception, sensor fusion, and systems that support AI/ML workflows.</p>
-        <p>I’m pursuing an M.S. in Computer Engineering at SJSU and have prior experience as a software engineer building IoT platforms and internal tools. Broadly, I enjoy work at the intersection of <strong>systems, AI/ML, and robotics</strong>.</p>
+      <div class="intro" style="text-align:left; max-width:800px;">
+        <h1 style="text-align:center;">About Me</h1>
 
-        <h3>How I work</h3>
-        <p>I prefer small, iterative changes over big rewrites, like to instrument what I build, and value clear communication with teammates and stakeholders.</p>
+        <div class="about-section fade-up">
+          <h3>👋 Hey, I'm Ambarish</h3>
+          <p>I'm a robotics and AI engineer who loves building things that actually work in the real world. You know,
+            the kind where sensors are noisy, hardware does its own thing, and you learn that "it works on my machine"
+            is never good enough. I also believe in learning out loud. I write articles, make videos, and try to share
+            what I pick up along the way.</p>
+        </div>
 
-        <h3>Contact</h3>
-        <p><strong>Email:</strong> <a href="mailto:ambarishgk@gmail.com">ambarishgk@gmail.com</a></p>
-        <p class="links">
-          <a href="https://github.com/AmbarishGK" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34 .73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.78-1.35-1.78-1.1-.75 .08-.74 .08-.74 1.22 .09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01 .11-.79 .42-1.32 .76-1.63-2.67-.3-5.48-1.34-5.48-5.95 0-1.31 .47-2.38 1.24-3.22-.12-.3-.54-1.52 .12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23 .66 1.64 .24 2.86 .12 3.16 .78 .84 1.24 1.91 1.24 3.22 0 4.62-2.82 5.65-5.5 5.95 .43 .37 .81 1.1 .81 2.22v3.29c0 .32 .21 .7 .82 .58A12 12 0 0 0 12 .5z"/></svg>
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.46V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://www.youtube.com/@AmbarishGK" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2s-.23-1.64-.95-2.36c-.91-.95-1.94-.95-2.41-1-3.37-.24-8.43-.24-8.43-.24h-.01s-5.06 0-8.43 .24c-.47 .05-1.5 .06-2.41 1C.73 4.56 .5 6.2 .5 6.2S.27 8.13 .27 10.05v1.87c0 1.92 .22 3.84 .22 3.84s.23 1.63 .95 2.36c.91 .95 2.11 .92 2.64 1.02 1.92 .18 8.16 .24 8.16 .24s5.07-.01 8.44-.25c.47-.05 1.5-.06 2.41-1 .72-.72 .95-2.36 .95-2.36s.22-1.92 .22-3.84v-1.87c0-1.92-.22-3.85-.22-3.85zM9.75 14.34V7.61l6.29 3.37-6.29 3.36z"/></svg>
-            YouTube
-          </a>
-        </p>
+        <div class="about-section fade-up">
+          <h3>🛤️ How I Got Here</h3>
+          <p>I started out as a software developer in India, building IoT platforms and backend systems at startups. I
+            worked on everything from async Python monitoring to Go CLIs, serving thousands of edge devices in
+            production.</p>
+          <p>That work made me really curious about what happens where software meets hardware. So I moved to the U.S.
+            to pursue an <strong>M.S. in Computer Engineering at San Jose State University</strong>, and I'm now a
+            Graduate Research Assistant working on perception and autonomy for autonomous ground vehicles.</p>
+          <p>These days I'm deep into multi-modal sensor fusion (LiDAR + stereo cameras), LLM-powered voice
+            teleoperation, VLM-based exploration frameworks, ROS 2, NVIDIA Jetson/Orin, SLAM, and imitation learning.
+          </p>
+        </div>
+
+        <div class="about-section fade-up">
+          <h3>🎓 Teaching and Mentoring</h3>
+          <p>I genuinely believe the best way to learn something is to teach it. That's why I share my work through:</p>
+          <ul>
+            <li><strong>YouTube videos</strong> with project demos, tutorials, and breakdowns of what I'm building</li>
+            <li><strong>Medium articles</strong> where I go deeper into robotics, AI, and engineering concepts</li>
+            <li><strong>Open-source code</strong> so others can learn from it, use it, and make it better</li>
+          </ul>
+          <p>If you're a student or early-career engineer who's into robotics, AI, or embedded systems, I'd genuinely
+            love to help. I've been in your shoes, and I know how much even one good conversation with the right person
+            can change things.</p>
+        </div>
+
+        <div class="about-section fade-up">
+          <h3>🔧 How I Like to Work</h3>
+          <p>I prefer small, iterative changes over big rewrites. I like to instrument what I build so I can actually
+            see what's going on. I value clear communication and I enjoy working with people from all kinds of
+            backgrounds.</p>
+          <p>I'm comfortable across the full stack, from embedded firmware all the way to cloud services. But I'm most
+            energized when I'm solving problems right at the boundary where software meets the physical world.</p>
+        </div>
+
+        <div class="about-section fade-up">
+          <h3>🎯 What I'm Looking For</h3>
+          <p>I'm looking for <strong>robotics, AI/ML, and systems engineering roles</strong> where I can build
+            end-to-end systems that make a real impact. I'm especially drawn to teams working on autonomous systems,
+            perception, and developer tools.</p>
+        </div>
+
+        <div class="about-section fade-up">
+          <h3>🏀 When I'm Not Coding</h3>
+          <div class="chips" style="margin-top:.5rem;">
+            <span>🏀 Basketball</span>
+            <span>🚵🏽‍♂️ Cycling</span>
+            <span>🥾 Trekking</span>
+            <span>🏍️ Long Drives</span>
+            <span>🐲 Dungeons &amp; Dragons</span>
+            <span>📚 Reading</span>
+            <span>🎥 Movies</span>
+          </div>
+        </div>
+
+        <!-- Mentorship CTA -->
+        <div class="mentorship-cta fade-up">
+          <h3>🤝 Want to connect or learn together?</h3>
+          <p>Whether you're exploring robotics, AI, or just getting started in tech, I'm always happy to chat, mentor,
+            or collaborate. Don't be a stranger!</p>
+          <a href="mailto:ambarishgk@gmail.com?subject=Mentorship%20/%20Collaboration&body=Hi%20Ambarish%2C%0A%0A">Let's
+            talk →</a>
+        </div>
+
+        <div class="about-section fade-up">
+          <h3>📬 Contact</h3>
+          <p><strong>Email:</strong> <a href="mailto:ambarishgk@gmail.com">ambarishgk@gmail.com</a></p>
+          <p class="links">
+            <a href="https://github.com/AmbarishGK" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34 .73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.78-1.35-1.78-1.1-.75 .08-.74 .08-.74 1.22 .09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01 .11-.79 .42-1.32 .76-1.63-2.67-.3-5.48-1.34-5.48-5.95 0-1.31 .47-2.38 1.24-3.22-.12-.3-.54-1.52 .12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23 .66 1.64 .24 2.86 .12 3.16 .78 .84 1.24 1.91 1.24 3.22 0 4.62-2.82 5.65-5.5 5.95 .43 .37 .81 1.1 .81 2.22v3.29c0 .32 .21 .7 .82 .58A12 12 0 0 0 12 .5z" />
+              </svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.45 20.45h-3.56v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.46V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://www.youtube.com/@AmbarishGK" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.5 6.2s-.23-1.64-.95-2.36c-.91-.95-1.94-.95-2.41-1-3.37-.24-8.43-.24-8.43-.24h-.01s-5.06 0-8.43 .24c-.47 .05-1.5 .06-2.41 1C.73 4.56 .5 6.2 .5 6.2S.27 8.13 .27 10.05v1.87c0 1.92 .22 3.84 .22 3.84s.23 1.63 .95 2.36c.91 .95 2.11 .92 2.64 1.02 1.92 .18 8.16 .24 8.16 .24s5.07-.01 8.44-.25c.47-.05 1.5-.06 2.41-1 .72-.72 .95-2.36 .95-2.36s.22-1.92 .22-3.84v-1.87c0-1.92-.22-3.85-.22-3.85zM9.75 14.34V7.61l6.29 3.37-6.29 3.36z" />
+              </svg>
+              YouTube
+            </a>
+            <a href="https://medium.com/@Ambarishgk" target="_blank" rel="noopener">Medium</a>
+            <a href="assets/Ambarish_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Floating Contact FAB -->
-  <a
-    class="fab-contact"
-    href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
-    aria-label="Contact me"
-    rel="noopener"
-  >
+  <a class="fab-contact" href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
+    aria-label="Contact me" rel="noopener">
     <svg class="msg-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="currentColor" d="M2 5.75C2 4.78 2.78 4 3.75 4h16.5C21.22 4 22 4.78 22 5.75v12.5c0 .97-.78 1.75-1.75 1.75H7.4l-3.54 2.36A.75.75 0 0 1 2 21.97V5.75Zm1.5.75v9.5h16V6.5l-7.24 4.83a2.5 2.5 0 0 1-2.52 0L3.5 6.5Zm.94-1.5 7.31 4.88a1 1 0 0 0 1.0 0L20.06 5.75H4.44Z"/>
+      <path fill="currentColor"
+        d="M2 5.75C2 4.78 2.78 4 3.75 4h16.5C21.22 4 22 4.78 22 5.75v12.5c0 .97-.78 1.75-1.75 1.75H7.4l-3.54 2.36A.75.75 0 0 1 2 21.97V5.75Zm1.5.75v9.5h16V6.5l-7.24 4.83a2.5 2.5 0 0 1-2.52 0L3.5 6.5Zm.94-1.5 7.31 4.88a1 1 0 0 0 1.0 0L20.06 5.75H4.44Z" />
     </svg>
     <span class="fab-label">Contact me</span>
   </a>
 
-  <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ambarish G K</p>
+  </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <div class="page-transition" id="page-transition"></div>
+  <script src="assets/js/enhancements.js" defer></script>
 </body>
+
 </html>

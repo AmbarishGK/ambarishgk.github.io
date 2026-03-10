@@ -1,77 +1,230 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AGK Portfolio</title>
+  <title>Projects  |  Ambarish G K</title>
+  <meta name="description"
+    content="Projects by Ambarish G K spanning robotics perception, sensor fusion, AI tooling, and systems engineering." />
+  <meta name="keywords"
+    content="Ambarish G K projects, robotics, AI, sensor fusion, ROS2, YOLO, LiDAR, NVIDIA Jetson, portfolio" />
+  <link rel="canonical" href="https://ambarishgk.me/portfolio.html" />
   <link rel="icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Init theme before CSS -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projects  |  Ambarish G K" />
+  <meta property="og:description" content="Robotics, AI, and systems projects by Ambarish G K." />
+  <meta property="og:url" content="https://ambarishgk.me/portfolio.html" />
+  <meta property="og:image" content="https://ambarishgk.me/assets/img/me.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@AmbarishGK1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <script>
-    (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme','dark');
+    (function () {
+      var s = localStorage.getItem('theme');
+      if (s === 'dark' || (!s && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
-        document.documentElement.setAttribute('data-theme','light');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
   </script>
 
-  <!-- Critical inline CSS -->
   <style>
-    .site-header{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem}
-    .site-nav{display:flex;gap:1rem}
-    .logo{font-weight:700;letter-spacing:.5px}
-    .theme-toggle{border:none;background:rgba(0,0,0,.10);border-radius:10px;padding:.35rem .55rem;line-height:1;font-size:.95rem;backdrop-filter:saturate(160%) blur(6px)}
-    .menu-toggle{border:1px solid #ddd;background:none;border-radius:8px;padding:.3rem .55rem;font-size:1.2rem}
-    .right-ctas{display:flex;gap:.5rem;align-items:center}
-    .hero{display:grid;gap:1rem;justify-items:center;margin-top:1rem}
-    .intro{max-width:780px;background:#fff;border-radius:14px;padding:1.2rem 1.4rem;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08)}
-    :root[data-theme="dark"] .intro{background:#1e1f23;box-shadow:none}
-    :root[data-theme="dark"] .site-header{background:rgba(20,22,25,.85)}
-    :root[data-theme="dark"] .theme-toggle{background:rgba(255,255,255,.10)}
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .8rem 1rem
+    }
+
+    .site-nav {
+      display: flex;
+      gap: .6rem
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem
+    }
+
+    .theme-toggle {
+      border: none;
+      background: rgba(0, 0, 0, .08);
+      border-radius: 10px;
+      padding: .35rem .55rem;
+      line-height: 1;
+      font-size: .95rem;
+      backdrop-filter: saturate(160%) blur(6px)
+    }
+
+    .menu-toggle {
+      border: 1px solid #ddd;
+      background: none;
+      border-radius: 8px;
+      padding: .3rem .55rem;
+      font-size: 1.2rem
+    }
+
+    .right-ctas {
+      display: flex;
+      gap: .5rem;
+      align-items: center
+    }
+
+    .loader-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f5f6fa;
+      transition: opacity .45s ease, visibility .45s ease
+    }
+
+    .loader-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none
+    }
+
+    .loader-logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #3c58a6;
+      animation: pulse 1.2s ease-in-out infinite
+    }
+
+    .loader-tagline {
+      margin-top: .5rem;
+      font-size: .85rem;
+      color: #888;
+      letter-spacing: .5px
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: .4;
+        transform: scale(.96)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    :root[data-theme="dark"] .loader-overlay {
+      background: #15171a
+    }
+
+    :root[data-theme="dark"] .loader-logo {
+      color: #8bb8ff
+    }
+
+    :root[data-theme="dark"] .site-header {
+      background: rgba(20, 22, 25, .92)
+    }
+
+    :root[data-theme="dark"] .theme-toggle {
+      background: rgba(255, 255, 255, .10)
+    }
   </style>
 
-  <!-- FAB fallback (ensures correct size/position even if main.css loads late) -->
   <style id="fab-inline-fix">
-  .fab-contact{
-    position: fixed; right: 20px; bottom: 20px; z-index: 1100;
-    display: inline-flex; align-items: center; gap: .65rem;
-    padding: .65rem .9rem; border: none; border-radius: 999px;
-    text-decoration: none; font-weight: 600; font-size: 16px; line-height: 1;
-    background: rgba(0,0,0,.10); color: inherit; backdrop-filter: saturate(160%) blur(6px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  }
-  .fab-contact .msg-icon { width: 20px; height: 20px; flex: 0 0 20px; display: inline-block; }
-  .fab-contact .fab-label { font-size: 1rem; }
-  @media (max-width: 900px) {
-    .fab-contact { right: 16px; bottom: 16px; padding: .75rem; gap: 0; }
-    .fab-contact .fab-label {
-      position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
-      clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+    .fab-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1100;
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: .65rem .9rem;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      background: rgba(0, 0, 0, .08);
+      color: inherit;
+      backdrop-filter: saturate(160%) blur(6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .10)
     }
-    .fab-contact .msg-icon { width: 26px; height: 26px; }
-  }
+
+    .fab-contact .msg-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      display: inline-block
+    }
+
+    .fab-contact .fab-label {
+      font-size: 1rem
+    }
+
+    @media(max-width:900px) {
+      .fab-contact {
+        right: 16px;
+        bottom: 16px;
+        padding: .75rem;
+        gap: 0
+      }
+
+      .fab-contact .fab-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0
+      }
+
+      .fab-contact .msg-icon {
+        width: 26px;
+        height: 26px
+      }
+    }
   </style>
 
   <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="main.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="main.css">
+  </noscript>
 </head>
 
 <body>
+  <div class="loader-overlay" id="loader">
+    <div class="loader-logo">AGK</div>
+    <div class="loader-tagline">Robotics · AI · Builder · Mentor</div>
+  </div>
+
   <header class="site-header">
     <a class="logo" href="/">AGK</a>
-
     <nav class="site-nav" id="nav">
       <a href="/">Home</a>
-      <a class="active" aria-current="page" href="portfolio.html">Portfolio</a>
-      <a href="experience.html">Experience</a>
+      <a class="active" aria-current="page" href="portfolio.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="videos.html">Videos</a>
       <a href="about.html">About</a>
     </nav>
-
     <div class="right-ctas">
       <button class="theme-toggle" id="themeToggle" aria-label="Current theme: Light. Switch to dark">🌞</button>
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -82,31 +235,32 @@
     <section class="section">
       <h1>Projects</h1>
       <p style="text-align:center; max-width:640px; margin:0 auto 1.5rem; color:#555; font-size:.98rem;">
-        A mix of robotics perception, systems work, and AI tooling. Many projects have short videos attached so you can quickly see them in action.
+        A mix of robotics perception, systems work, and AI tooling. Many projects have short videos attached so you can
+        quickly see them in action.
       </p>
-
       <div class="grid cards" id="all-projects"></div>
     </section>
   </main>
 
-  <!-- Floating Contact FAB -->
-  <a
-    class="fab-contact"
-    href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
-    aria-label="Contact me"
-    rel="noopener"
-  >
+  <a class="fab-contact" href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
+    aria-label="Contact me" rel="noopener">
     <svg class="msg-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="currentColor" d="M2 5.75C2 4.78 2.78 4 3.75 4h16.5C21.22 4 22 4.78 22 5.75v12.5c0 .97-.78 1.75-1.75 1.75H7.4l-3.54 2.36A.75.75 0 0 1 2 21.97V5.75Zm1.5.75v9.5h16V6.5l-7.24 4.83a2.5 2.5 0 0 1-2.52 0L3.5 6.5Zm.94-1.5 7.31 4.88a1 1 0 0 0 1.0 0L20.06 5.75H4.44Z"/>
+      <path fill="currentColor"
+        d="M2 5.75C2 4.78 2.78 4 3.75 4h16.5C21.22 4 22 4.78 22 5.75v12.5c0 .97-.78 1.75-1.75 1.75H7.4l-3.54 2.36A.75.75 0 0 1 2 21.97V5.75Zm1.5.75v9.5h16V6.5l-7.24 4.83a2.5 2.5 0 0 1-2.52 0L3.5 6.5Zm.94-1.5 7.31 4.88a1 1 0 0 0 1.0 0L20.06 5.75H4.44Z" />
     </svg>
     <span class="fab-label">Contact me</span>
   </a>
 
-  <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ambarish G K</p>
+  </footer>
 
   <script src="assets/data/projects.js"></script>
   <script src="assets/js/lite-youtube.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/render-projects.js" defer></script>
+  <div class="page-transition" id="page-transition"></div>
+  <script src="assets/js/enhancements.js" defer></script>
 </body>
+
 </html>

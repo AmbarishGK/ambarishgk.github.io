@@ -1,99 +1,416 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <!-- Analytics -->
+  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ambarish G K</title>
-  <meta name="description" content="Ambarish G K curious builder focused on practical systems across software, AI, and robotics." />
+  <title>Ambarish G K | Robotics and AI Engineer, Mentor</title>
+  <meta name="description"
+    content="Ambarish G K builds, teaches, and shares across robotics, AI, and embedded systems. MS Computer Engineering @ SJSU. Explore projects, articles, and videos." />
+  <meta name="keywords"
+    content="Ambarish G K, robotics engineer, AI researcher, SJSU, ROS2, LiDAR, sensor fusion, NVIDIA Jetson, machine learning, mentor, teacher, embedded systems" />
+  <meta name="author" content="Ambarish G K" />
+  <link rel="canonical" href="https://ambarishgk.me/" />
   <link rel="icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ambarish G K | Robotics and AI Engineer, Mentor" />
+  <meta property="og:description"
+    content="Robotics and AI engineer who builds, teaches, and shares. Explore projects, articles, and videos." />
+  <meta property="og:url" content="https://ambarishgk.me/" />
+  <meta property="og:site_name" content="Ambarish G K" />
+  <meta property="og:image" content="https://ambarishgk.me/assets/img/me.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@AmbarishGK1" />
+  <meta name="twitter:title" content="Ambarish G K | Robotics and AI Engineer, Mentor" />
+  <meta name="twitter:description"
+    content="Robotics and AI engineer who builds, teaches, and shares. Explore projects, articles, and videos." />
+  <meta name="twitter:image" content="https://ambarishgk.me/assets/img/me.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ambarish G K",
+    "url": "https://ambarishgk.me",
+    "image": "https://ambarishgk.me/assets/img/me.png",
+    "jobTitle": "Robotics and AI Engineer",
+    "worksFor": { "@type": "Organization", "name": "San Jose State University Research Foundation" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "San Jose State University" },
+    "knowsAbout": ["Robotics", "Artificial Intelligence", "Machine Learning", "ROS2", "LiDAR", "Sensor Fusion", "NVIDIA Jetson", "Python", "C++", "Embedded Systems"],
+    "sameAs": [
+      "https://github.com/AmbarishGK",
+      "https://www.linkedin.com/in/ambarishgk/",
+      "https://www.youtube.com/@AmbarishGK",
+      "https://medium.com/@Ambarishgk",
+      "https://twitter.com/AmbarishGK1"
+    ]
+  }
+  </script>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Init theme before CSS (prevents flash) -->
   <script>
-    (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme','dark');
+    (function () {
+      var s = localStorage.getItem('theme');
+      if (s === 'dark' || (!s && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
-        document.documentElement.setAttribute('data-theme','light');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
   </script>
 
   <!-- Critical inline CSS -->
   <style>
-    .site-header{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem}
-    .site-nav{display:flex;gap:1rem}
-    .logo{font-weight:700;letter-spacing:.5px}
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .8rem 1rem
+    }
 
-    /* translucent toggle vs hamburger (hamburger keeps border) */
-    .theme-toggle{border:none;background:rgba(0,0,0,.10);border-radius:10px;padding:.35rem .55rem;line-height:1;font-size:.95rem;backdrop-filter:saturate(160%) blur(6px)}
-    .menu-toggle{border:1px solid #ddd;background:none;border-radius:8px;padding:.3rem .55rem;font-size:1.2rem}
-    .right-ctas{display:flex;gap:.5rem;align-items:center}
+    .site-nav {
+      display: flex;
+      gap: .6rem
+    }
 
-    .hero{display:grid;gap:1rem;justify-items:center;margin-top:1rem}
-    .avatar{width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-    .intro{max-width:780px;background:#fff;border-radius:14px;padding:1.2rem 1.4rem;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .logo {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem
+    }
 
-    /* dark first paint */
-    :root[data-theme="dark"] .intro{background:#1e1f23;box-shadow:none}
-    :root[data-theme="dark"] .site-header{background:rgba(20,22,25,.85)}
-    :root[data-theme="dark"] .theme-toggle{background:rgba(255,255,255,.10)}
+    .theme-toggle {
+      border: none;
+      background: rgba(0, 0, 0, .08);
+      border-radius: 10px;
+      padding: .35rem .55rem;
+      line-height: 1;
+      font-size: .95rem;
+      backdrop-filter: saturate(160%) blur(6px)
+    }
+
+    .menu-toggle {
+      border: 1px solid #ddd;
+      background: none;
+      border-radius: 8px;
+      padding: .3rem .55rem;
+      font-size: 1.2rem
+    }
+
+    .right-ctas {
+      display: flex;
+      gap: .5rem;
+      align-items: center
+    }
+
+    .hero-section {
+      display: grid;
+      gap: 1.2rem;
+      justify-items: center;
+      margin-top: 1rem;
+      padding-bottom: 0
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .12)
+    }
+
+    .intro {
+      max-width: 780px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
+    }
+
+    .loader-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f5f6fa;
+      transition: opacity .45s ease, visibility .45s ease
+    }
+
+    .loader-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none
+    }
+
+    .loader-logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #3c58a6;
+      animation: pulse 1.2s ease-in-out infinite
+    }
+
+    .loader-tagline {
+      margin-top: .5rem;
+      font-size: .85rem;
+      color: #888;
+      letter-spacing: .5px
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: .4;
+        transform: scale(.96)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    :root[data-theme="dark"] .loader-overlay {
+      background: #12141a
+    }
+
+    :root[data-theme="dark"] .loader-logo {
+      color: #8bb8ff
+    }
+
+    :root[data-theme="dark"] .intro {
+      background: #1c1e24;
+      box-shadow: none
+    }
+
+    :root[data-theme="dark"] .site-header {
+      background: rgba(18, 20, 26, .94)
+    }
+
+    :root[data-theme="dark"] .theme-toggle {
+      background: rgba(255, 255, 255, .12)
+    }
+
+    /* Typing animation */
+    .typed-roles {
+      display: inline
+    }
+
+    .typed-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: #3c58a6;
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink .75s step-end infinite
+    }
+
+    :root[data-theme="dark"] .typed-cursor {
+      background: #8bb8ff
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0
+      }
+    }
+
+    .highlight-role {
+      color: #3c58a6;
+      font-weight: 700
+    }
+
+    :root[data-theme="dark"] .highlight-role {
+      color: #8bb8ff
+    }
+
+    /* Featured video on homepage */
+    .hero-video {
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: .8rem 0 .2rem
+    }
+
+    .stat {
+      text-align: center
+    }
+
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #3c58a6;
+      display: block
+    }
+
+    :root[data-theme="dark"] .stat-num {
+      color: #8bb8ff
+    }
+
+    .stat-label {
+      font-size: .8rem;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    :root[data-theme="dark"] .stat-label {
+      color: #999
+    }
+
+    /* Currently working on */
+    .now-section {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      padding: .5rem 0
+    }
+
+    .now-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: #e8f0ff;
+      border: 1px solid #c8d8ff;
+      border-radius: 999px;
+      padding: .4rem 1rem;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #3c58a6;
+      margin-bottom: .5rem
+    }
+
+    :root[data-theme="dark"] .now-badge {
+      background: #1e2a40;
+      border-color: #2a3d60;
+      color: #8bb8ff
+    }
+
+    .now-section p {
+      font-size: .95rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto
+    }
+
+    :root[data-theme="dark"] .now-section p {
+      color: #bbb
+    }
   </style>
 
-  <!-- FAB fallback (ensures correct size/position even if main.css loads late) -->
+  <!-- FAB fallback -->
   <style id="fab-inline-fix">
-  /* ===== FAB fallback to keep it small & bottom-right even if main.css loads late ===== */
-  .fab-contact{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1100;
-    display: inline-flex;
-    align-items: center;
-    gap: .65rem;
-    padding: .65rem .9rem;
-    border: none;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1;
-    background: rgba(0,0,0,.10);
-    color: inherit;
-    backdrop-filter: saturate(160%) blur(6px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  }
-  .fab-contact .msg-icon { width: 20px; height: 20px; flex: 0 0 20px; display: inline-block; }
-  .fab-contact .fab-label { font-size: 1rem; }
-  @media (max-width: 900px) {
-    .fab-contact { right: 16px; bottom: 16px; padding: .75rem; gap: 0; }
-    .fab-contact .fab-label {
-      position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
-      clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+    .fab-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1100;
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: .65rem .9rem;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      background: rgba(0, 0, 0, .08);
+      color: inherit;
+      backdrop-filter: saturate(160%) blur(6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .10)
     }
-    .fab-contact .msg-icon { width: 26px; height: 26px; }
-  }
+
+    .fab-contact .msg-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      display: inline-block
+    }
+
+    .fab-contact .fab-label {
+      font-size: 1rem
+    }
+
+    @media(max-width:900px) {
+      .fab-contact {
+        right: 16px;
+        bottom: 16px;
+        padding: .75rem;
+        gap: 0
+      }
+
+      .fab-contact .fab-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0
+      }
+
+      .fab-contact .msg-icon {
+        width: 26px;
+        height: 26px
+      }
+    }
   </style>
 
   <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="main.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="main.css">
+  </noscript>
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loader-overlay" id="loader">
+    <div class="loader-logo">AGK</div>
+    <div class="loader-tagline">Robotics · AI · Builder · Mentor</div>
+  </div>
+
   <header class="site-header">
     <a class="logo" href="/">AGK</a>
-
     <nav class="site-nav" id="nav">
       <a class="active" aria-current="page" href="/">Home</a>
-
-      <a href="portfolio.html">Portfolio</a>
-      <a href="experience.html">Experience</a>
+      <a href="portfolio.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="videos.html">Videos</a>
       <a href="about.html">About</a>
     </nav>
-
-    <!-- Top-right: theme first, then hamburger -->
     <div class="right-ctas">
       <button class="theme-toggle" id="themeToggle" aria-label="Current theme: Light. Switch to dark">🌞</button>
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -102,38 +419,65 @@
 
   <main id="content">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero-section">
       <picture>
         <source type="image/webp" srcset="assets/img/me-160.webp 1x, assets/img/me-320.webp 2x">
-        <img class="avatar" src="assets/img/me.png" alt="Headshot of Ambarish G K" width="160" height="160" loading="lazy" decoding="async" />
+        <img class="avatar" src="assets/img/me.png" alt="Headshot of Ambarish G K" width="140" height="140"
+          loading="eager" decoding="async" />
       </picture>
 
       <div class="intro">
-        <h1>Ambarish G K</h1>
+        <h1>Hey, I'm Ambarish 👋</h1>
         <p class="tagline">
-          Software / ML / robotics engineer who likes turning messy real-world problems into working systems.
-          I’ve worked across sensor fusion for robots, perception on NVIDIA Jetson, and LLM-powered tools.
+          I build <span class="highlight-role" id="typed-text"></span><span class="typed-cursor"></span>
         </p>
-        <p class="meta-line">Currently: M.S. Computer Engineering @ SJSU · Graduate Research Assistant working on perception &amp; autonomy.</p>
-        <p class="meta-line">Interested in software, ML, and robotics roles where I can build end-to-end systems.</p>
-        <p class="email">📧 <a href="mailto:ambarishgk@gmail.com">ambarishgk@gmail.com</a></p>
+        <p class="tagline" style="margin-top:.3rem;">
+          and I share everything I learn through projects, articles, and videos.
+        </p>
+        <div class="brand-pills">
+          <span>🤖 Robotics</span>
+          <span>🧠 AI &amp; ML</span>
+          <span>🔧 Systems</span>
+          <span>🎓 Mentor &amp; Teacher</span>
+        </div>
+        <p class="meta-line">M.S. Computer Engineering @ SJSU · Graduate Research Assistant, Perception and Autonomy</p>
+
+        <div class="stats-bar">
+          <div class="stat"><span class="stat-num" id="stat-projects">9</span><span class="stat-label">Projects</span>
+          </div>
+          <div class="stat"><span class="stat-num" id="stat-videos">3</span><span class="stat-label">Videos</span></div>
+          <div class="stat"><span class="stat-num" id="stat-articles">--</span><span class="stat-label">Articles</span>
+          </div>
+          <div class="stat"><span class="stat-num" id="stat-subscribers">--</span><span class="stat-label">YT
+              Subscribers</span></div>
+        </div>
 
         <p class="links">
           <a href="https://github.com/AmbarishGK" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34 .73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.78-1.35-1.78-1.1-.75 .08-.74 .08-.74 1.22 .09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01 .11-.79 .42-1.32 .76-1.63-2.67-.3-5.48-1.34-5.48-5.95 0-1.31 .47-2.38 1.24-3.22-.12-.3-.54-1.52 .12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23 .66 1.64 .24 2.86 .12 3.16 .78 .84 1.24 1.91 1.24 3.22 0 4.62-2.82 5.65-5.5 5.95 .43 .37 .81 1.1 .81 2.22v3.29c0 .32 .21 .7 .82 .58A12 12 0 0 0 12 .5z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34 .73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.78-1.35-1.78-1.1-.75 .08-.74 .08-.74 1.22 .09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01 .11-.79 .42-1.32 .76-1.63-2.67-.3-5.48-1.34-5.48-5.95 0-1.31 .47-2.38 1.24-3.22-.12-.3-.54-1.52 .12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23 .66 1.64 .24 2.86 .12 3.16 .78 .84 1.24 1.91 1.24 3.22 0 4.62-2.82 5.65-5.5 5.95 .43 .37 .81 1.1 .81 2.22v3.29c0 .32 .21 .7 .82 .58A12 12 0 0 0 12 .5z" />
+            </svg>
             GitHub
           </a>
           <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.46V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.56v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.46V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z" />
+            </svg>
             LinkedIn
           </a>
           <a href="https://www.youtube.com/@AmbarishGK" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2s-.23-1.64-.95-2.36c-.91-.95-1.94-.95-2.41-1-3.37-.24-8.43-.24-8.43-.24h-.01s-5.06 0-8.43 .24c-.47 .05-1.5 .06-2.41 1C.73 4.56 .5 6.2 .5 6.2S.27 8.13 .27 10.05v1.87c0 1.92 .22 3.84 .22 3.84s.23 1.63 .95 2.36c.91 .95 2.11 .92 2.64 1.02 1.92 .18 8.16 .24 8.16 .24s5.07-.01 8.44-.25c.47-.05 1.5-.06 2.41-1 .72-.72 .95-2.36 .95-2.36s.22-1.92 .22-3.84v-1.87c0-1.92-.22-3.85-.22-3.85zM9.75 14.34V7.61l6.29 3.37-6.29 3.36z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M23.5 6.2s-.23-1.64-.95-2.36c-.91-.95-1.94-.95-2.41-1-3.37-.24-8.43-.24-8.43-.24h-.01s-5.06 0-8.43 .24c-.47 .05-1.5 .06-2.41 1C.73 4.56 .5 6.2 .5 6.2S.27 8.13 .27 10.05v1.87c0 1.92 .22 3.84 .22 3.84s.23 1.63 .95 2.36c.91 .95 2.11 .92 2.64 1.02 1.92 .18 8.16 .24 8.16 .24s5.07-.01 8.44-.25c.47-.05 1.5-.06 2.41-1 .72-.72 .95-2.36 .95-2.36s.22-1.92 .22-3.84v-1.87c0-1.92-.22-3.85-.22-3.85zM9.75 14.34V7.61l6.29 3.37-6.29 3.36z" />
+            </svg>
             YouTube
           </a>
           <a href="https://medium.com/@Ambarishgk" target="_blank" rel="noopener">
             <svg class="icon" viewBox="0 0 1043.63 592.71" aria-hidden="true">
-              <path d="M588.67 296.35c0 163.68-131.77 296.36-294.33 296.36S0 460.03 0 296.35C0 132.66 131.77 0 294.34 0s294.33 132.66 294.33 296.35zM829.59 296.35c0 154.14-65.89 279.07-147.1 279.07s-147.09-124.93-147.09-279.07c0-154.14 65.88-279.07 147.09-279.07s147.1 124.93 147.1 279.07zM1043.63 296.35c0 142.71-22.93 258.47-51.22 258.47s-51.22-115.76-51.22-258.47c0-142.71 22.93-258.47 51.22-258.47s51.22 115.76 51.22 258.47z"/>
+              <path
+                d="M588.67 296.35c0 163.68-131.77 296.36-294.33 296.36S0 460.03 0 296.35C0 132.66 131.77 0 294.34 0s294.33 132.66 294.33 296.35zM829.59 296.35c0 154.14-65.89 279.07-147.1 279.07s-147.09-124.93-147.09-279.07c0-154.14 65.88-279.07 147.09-279.07s147.1 124.93 147.1 279.07zM1043.63 296.35c0 142.71-22.93 258.47-51.22 258.47s-51.22-115.76-51.22-258.47c0-142.71 22.93-258.47 51.22-258.47s51.22 115.76 51.22 258.47z" />
             </svg>
             Medium
           </a>
@@ -142,76 +486,273 @@
       </div>
     </section>
 
-    <!-- FOCUS -->
-    <section class="section" id="focus">
-      <h2>What I work on</h2>
-      <div class="grid two">
+    <!-- CURRENTLY WORKING ON -->
+    <section class="section fade-up">
+      <div class="now-section">
+        <div class="now-badge">🟢 Currently Working On</div>
+        <p>Building a VLM-powered robotic exploration framework and multi-modal sensor fusion pipelines for autonomous
+          ground vehicles at SJSU.</p>
+      </div>
+    </section>
+
+    <!-- FEATURED VIDEO -->
+    <section class="section fade-up">
+      <h2>Watch My Latest Project</h2>
+      <div class="hero-video">
+        <lite-youtube videoid="9QC_FBc9_o8" params="modestbranding=1&rel=0&playsinline=1"></lite-youtube>
+      </div>
+      <p class="more" style="margin-top:1rem"><a class="button" href="videos.html">See all videos →</a></p>
+    </section>
+
+    <!-- LATEST (auto-loaded from Medium + YouTube RSS) -->
+    <section class="section fade-up" id="latest">
+      <h2>Latest From the Web</h2>
+      <div class="latest-grid" id="auto-latest">
+        <!-- Populated by JS from RSS feeds -->
+        <div class="blog-loading">
+          <div class="spinner"></div>
+          <p>Loading latest content...</p>
+        </div>
+      </div>
+    </section>
+    <!-- OPEN TO WORK BANNER (set data-active="true" to show, "false" to hide) -->
+    <div class="otw-banner" data-active="true">
+      <span class="otw-dot"></span>
+      Open to work: Robotics, AI/ML, and Systems Engineering roles
+      <a href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+
+    <!-- WHAT I DO -->
+    <section class="section fade-up">
+      <h2>What I Do</h2>
+      <div class="grid cards" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
         <article class="card">
-          <h3>Robotics &amp; perception</h3>
-          <p>I like problems where software has to make sense of noisy sensors and run on real hardware: LiDAR + stereo fusion, SLAM, and perception on NVIDIA Jetson / Orin.</p>
+          <h3>🤖 Build Robots</h3>
+          <p>Sensor fusion, autonomous navigation, robotic arms, SLAM, ROS 2, NVIDIA Jetson. I love making hardware and
+            software work together.</p>
         </article>
         <article class="card">
-          <h3>Systems &amp; AI tooling</h3>
-          <p>I’ve built IoT monitoring systems, meeting assistants powered by LLMs, and tools that make it easier for teams to deploy and observe software in production.</p>
+          <h3>🧠 Train AI Models</h3>
+          <p>VLMs, imitation learning, YOLO, LLMs. I train models that need to work in real-time on real hardware, not
+            just in a notebook.</p>
+        </article>
+        <article class="card">
+          <h3>🎓 Teach and Mentor</h3>
+          <p>I make YouTube videos, write on Medium, and open-source my code. If you are getting into robotics or AI, I
+            would love to help.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GITHUB CONTRIBUTION STATS -->
+    <section class="section fade-up">
+      <h2>GitHub Activity</h2>
+      <div class="gh-stats-grid">
+        <img class="gh-stats-img gh-light-only"
+          src="https://github-readme-stats.vercel.app/api?username=AmbarishGK&show_icons=true&hide_title=true&hide_border=true&bg_color=00000000&text_color=555&icon_color=3c58a6&hide=stars&count_private=true"
+          alt="GitHub stats" loading="lazy">
+        <img class="gh-stats-img gh-dark-only"
+          src="https://github-readme-stats.vercel.app/api?username=AmbarishGK&show_icons=true&hide_title=true&hide_border=true&bg_color=00000000&text_color=c8ccd4&icon_color=8bb8ff&hide=stars&count_private=true&theme=dark"
+          alt="GitHub stats" loading="lazy">
+        <img class="gh-stats-img gh-light-only"
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmbarishGK&layout=compact&hide_title=true&hide_border=true&bg_color=00000000&text_color=555&langs_count=8"
+          alt="Top languages" loading="lazy">
+        <img class="gh-stats-img gh-dark-only"
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmbarishGK&layout=compact&hide_title=true&hide_border=true&bg_color=00000000&text_color=c8ccd4&langs_count=8&theme=dark"
+          alt="Top languages" loading="lazy">
+      </div>
+      <p class="more"><a class="button" href="https://github.com/AmbarishGK" target="_blank" rel="noopener">View GitHub
+          profile</a></p>
+    </section>
+
+    <!-- TALKS & FEATURED IN -->
+    <section class="section fade-up">
+      <h2>Talks and Features</h2>
+      <div class="grid cards" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+        <article class="card">
+          <h3>🎤 Panel Speaker</h3>
+          <p>Participated in panel discussions on robotics, AI, and emerging tech for engineering audiences.</p>
+        </article>
+        <article class="card">
+          <h3>🌍 Global Tech Leader</h3>
+          <p>Recognized as a global leader in tech communities, contributing to knowledge sharing and mentorship across
+            borders.</p>
+        </article>
+        <article class="card">
+          <h3>📢 Content Creator</h3>
+          <p>Creating educational content on YouTube and Medium that reaches robotics and AI enthusiasts worldwide.</p>
         </article>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section class="section">
+    <section class="section fade-up">
       <h2>Skills</h2>
       <div class="grid cards">
-        <article class="card"><h3>Programming</h3><div class="chips"><span>Python</span><span>C++</span><span>Go</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>C</span></div></article>
-        <article class="card"><h3>AI &amp; ML</h3><div class="chips"><span>PyTorch</span><span>Keras</span><span>YOLO</span><span>SLAM</span><span>LLM</span><span>VLM</span></div></article>
-        <article class="card"><h3>Robotics</h3><div class="chips"><span>ROS 2</span><span>Rviz</span><span>Gazebo</span><span>Issac Sim</span><span>Sensor Fusion</span><span>LiDAR</span><span>Stereo Cameras</span><span>NVIDIA Jetson</span></div></article>
-        <article class="card"><h3>Systems &amp; Tools</h3><div class="chips"><span>Linux</span><span>Docker</span><span>Git</span><span>AWS</span><span>GCP</span><span>MySQL</span><span>MongoDB</span></div></article>
-        <article class="card"><h3>Embedded</h3><div class="chips"><span>SPI</span><span>CAN</span><span>UART</span><span>NXP</span><span>FreeRTOS</span><span>I²C</span></div></article>
-        <article class="card"><h3>Soft Skills</h3><div class="chips"><span>Problem Solving</span><span>Communication</span><span>Collaboration</span><span>Adaptability</span><span>Time Management</span><span>Leadership</span><span>Critical Thinking</span></div></article>
+        <article class="card">
+          <h3>Programming</h3>
+          <div class="chips">
+            <span>Python</span><span>C++</span><span>Go</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>C</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>AI &amp; ML</h3>
+          <div class="chips">
+            <span>PyTorch</span><span>Keras</span><span>YOLO</span><span>SLAM</span><span>LLM</span><span>VLM</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Robotics</h3>
+          <div class="chips"><span>ROS 2</span><span>Rviz</span><span>Gazebo</span><span>Isaac Sim</span><span>Sensor
+              Fusion</span><span>LiDAR</span><span>Stereo Cameras</span><span>NVIDIA Jetson</span></div>
+        </article>
+        <article class="card">
+          <h3>Systems &amp; Tools</h3>
+          <div class="chips">
+            <span>Linux</span><span>Docker</span><span>Git</span><span>AWS</span><span>GCP</span><span>MySQL</span><span>MongoDB</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Embedded</h3>
+          <div class="chips">
+            <span>SPI</span><span>CAN</span><span>UART</span><span>NXP</span><span>FreeRTOS</span><span>I2C</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Soft Skills</h3>
+          <div class="chips"><span>Problem
+              Solving</span><span>Communication</span><span>Collaboration</span><span>Adaptability</span><span>Time
+              Management</span><span>Leadership</span><span>Critical Thinking</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TOOLS I USE -->
+    <section class="section fade-up">
+      <h2>Tools I Use</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><span class="tool-icon">🐍</span><span>Python</span></div>
+        <div class="tool-item"><span class="tool-icon">⚙️</span><span>ROS 2</span></div>
+        <div class="tool-item"><span class="tool-icon">🟢</span><span>NVIDIA Jetson</span></div>
+        <div class="tool-item"><span class="tool-icon">📷</span><span>ZED Camera</span></div>
+        <div class="tool-item"><span class="tool-icon">🐳</span><span>Docker</span></div>
+        <div class="tool-item"><span class="tool-icon">🐙</span><span>Git/GitHub</span></div>
+        <div class="tool-item"><span class="tool-icon">🧠</span><span>PyTorch</span></div>
+        <div class="tool-item"><span class="tool-icon">💻</span><span>VS Code</span></div>
+        <div class="tool-item"><span class="tool-icon">🐧</span><span>Linux/Ubuntu</span></div>
+        <div class="tool-item"><span class="tool-icon">☁️</span><span>AWS/GCP</span></div>
+        <div class="tool-item"><span class="tool-icon">📡</span><span>LiDAR</span></div>
+        <div class="tool-item"><span class="tool-icon">🤖</span><span>Isaac Sim</span></div>
       </div>
     </section>
 
     <!-- EDUCATION -->
-    <section class="section" id="education">
+    <section class="section fade-up" id="education">
       <h2>Education</h2>
       <div class="grid cards">
         <article class="card">
           <h3>🎓 M.S. in Computer Engineering</h3>
           <p><strong>San Jose State University</strong></p>
           <div class="chips">
-            <span>Operating Systems</span><span>Machine Learning</span><span>Artificial Intelligence</span><span>Data Engineering</span>
+            <span>Operating Systems</span><span>Machine Learning</span><span>Artificial Intelligence</span><span>Data
+              Engineering</span>
             <span>IoT</span><span>Software Security</span><span>Computer Architecture</span>
-            <span>Embedded Systems</span><span>Adv Computer Design</span><span>GPU</span><span>NLP</span><span>Software Design</span>
+            <span>Embedded Systems</span><span>Adv Computer Design</span><span>GPU</span><span>NLP</span><span>Software
+              Design</span>
           </div>
         </article>
       </div>
     </section>
 
     <!-- FEATURED PROJECTS -->
-    <section class="section">
+    <section class="section fade-up">
       <h2>Featured Projects</h2>
       <div class="grid cards" id="featured-projects"></div>
-      <p class="more"><a class="button" href="portfolio.html">See all projects →</a></p>
+      <p class="more"><a class="button" href="portfolio.html">See all projects</a></p>
+    </section>
+
+    <!--
+      TESTIMONIALS
+      ============
+      HOW TO ADD A TESTIMONIAL:
+      1. Uncomment only the <section> block below (remove the "< ! - -" before and "- - >" after it)
+      2. Replace the placeholder name, role, and quote
+      3. Copy a <blockquote> block to add more testimonials
+    -->
+    <!--
+    <section class="section fade-up">
+      <h2>What People Say</h2>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial-card">
+          <p>"Replace this with an actual quote from someone you have worked with or mentored."</p>
+          <footer>
+            <strong>Person's Name</strong>
+            <span>Their Role, Company/University</span>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>"Add another testimonial here. You can have as many as you want."</p>
+          <footer>
+            <strong>Another Person</strong>
+            <span>Their Role, Company/University</span>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+    -->
+
+    <!-- NEWSLETTER SIGNUP -->
+    <section class="section fade-up">
+      <div class="newsletter-cta">
+        <h3>📬 Stay updated</h3>
+        <p>Get notified when I publish new articles, videos, or project updates. No spam, just robotics and AI.</p>
+        <div class="newsletter-form">
+          <a class="button" href="https://medium.com/@Ambarishgk" target="_blank" rel="noopener">Follow on Medium</a>
+          <a class="button button-outline" href="https://www.youtube.com/@AmbarishGK?sub_confirmation=1" target="_blank"
+            rel="noopener">Subscribe on YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section fade-up">
+      <div class="mentorship-cta">
+        <h3>🤝 Let's work together</h3>
+        <p>Whether you want to collaborate on a robotics project, need a mentor, or just want to say hi, I would love to
+          hear from you.</p>
+        <div class="cta-buttons">
+          <a class="button" href="https://www.linkedin.com/in/ambarishgk/" target="_blank" rel="noopener">Connect on
+            LinkedIn</a>
+          <a class="button button-outline"
+            href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A">Send an email</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <!-- Floating Contact FAB -->
-  <a
-    class="fab-contact"
-    href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
-    aria-label="Contact me"
-    rel="noopener"
-  >
+  <a class="fab-contact" href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
+    aria-label="Contact me" rel="noopener">
     <svg class="msg-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="currentColor" d="M2 5.75C2 4.78 2.78 4 3.75 4h16.5C21.22 4 22 4.78 22 5.75v12.5c0 .97-.78 1.75-1.75 1.75H7.4l-3.54 2.36A.75.75 0 0 1 2 21.97V5.75Zm1.5.75v9.5h16V6.5l-7.24 4.83a2.5 2.5 0 0 1-2.52 0L3.5 6.5Zm.94-1.5 7.31 4.88a1 1 0 0 0 1.0 0L20.06 5.75H4.44Z"/>
+      <path fill="currentColor"
+        d="M2 5.75C2 4.78 2.78 4 3.75 4h16.5C21.22 4 22 4.78 22 5.75v12.5c0 .97-.78 1.75-1.75 1.75H7.4l-3.54 2.36A.75.75 0 0 1 2 21.97V5.75Zm1.5.75v9.5h16V6.5l-7.24 4.83a2.5 2.5 0 0 1-2.52 0L3.5 6.5Zm.94-1.5 7.31 4.88a1 1 0 0 0 1.0 0L20.06 5.75H4.44Z" />
     </svg>
     <span class="fab-label">Contact me</span>
   </a>
 
-  <footer class="site-footer"><p>© <span id="year"></span> Ambarish G K</p></footer>
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ambarish G K</p>
+  </footer>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition" id="page-transition"></div>
 
   <script src="assets/data/projects.js"></script>
   <script src="assets/js/lite-youtube.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/render-projects.js" defer></script>
+  <script src="assets/js/homepage-dynamic.js" defer></script>
+  <script src="assets/js/enhancements.js" defer></script>
 </body>
+
 </html>
