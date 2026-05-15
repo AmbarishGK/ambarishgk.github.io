@@ -5,11 +5,11 @@
   <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Experience  |  Ambarish G K</title>
+  <title>Experience | Ambarish G K | Physical AI Engineer</title>
   <meta name="description"
-    content="Professional experience of Ambarish G K in robotics, AI, IoT, and software engineering across research and industry." />
+    content="Professional experience of Ambarish G K in physical AI, humanoid robots, autonomous driving, robotics software engineering, and production IoT systems." />
   <meta name="keywords"
-    content="Ambarish G K experience, robotics engineer, software engineer, SJSU research assistant, IoT, AI" />
+    content="Ambarish G K experience, physical AI engineer, humanoid robots, autonomous driving, ADAS, Toborlife, SJSU, robotics software engineer, IoT" />
   <link rel="canonical" href="https://ambarishgk.me/experience.html" />
   <link rel="icon" href="favicon.ico" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -314,22 +314,34 @@
       </p>
 
       <div class="grid cards">
+        <!-- Toborlife -->
+        <article class="card fade-up">
+          <h3>Robotics Engineering Intern - <a href="https://toborlife.ai" target="_blank" rel="noopener">Toborlife AI</a></h3>
+          <div class="meta">Mountain View, CA · Feb 2026 – Present</div>
+          <ul>
+            <li>Designed robot learning data infrastructure from scratch for humanoid and quadruped platforms: studied what each platform's RL and VLA pipelines required, then architected multimodal capture, chunked S3 upload, and annotation schema for the team to build on.</li>
+            <li>Built a real-time multimodal data curation pipeline: synchronized camera and sensor streams packaged as MCAP/zstd with Parquet metadata, automated S3 upload with fault-tolerant buffering, feeding VLA and RL training frameworks.</li>
+            <li>Built XR teleoperation stack (Gear Sonic) across Unitree G1, Go2, and Inspire hands. Evaluated ZMQ, WebRTC, and gRPC to hit sub-150ms latency.</li>
+            <li>Designed agentic robot pipeline architecture: perception inputs to reasoning layers to action outputs, running autonomously on Jetson Thor/AGX at inference time.</li>
+            <li>Working across Unitree G1 humanoid, Go2 quadruped, Jetson Thor/AGX/Nano, Inspire and BrainCo hands, Pico XR, AIRBOT, UR6e, and Velodyne hardware.</li>
+          </ul>
+          <div class="chipline"><span>ROS2</span><span>Unitree G1</span><span>Humanoid Robots</span><span>MCAP</span><span>LiveKit WebRTC</span><span>Jetson</span><span>VLA</span><span>RL</span></div>
+        </article>
+
         <!-- Graduate RA -->
         <article class="card fade-up">
           <h3>Graduate Research Assistant - <a href="https://www.sjsu.edu/researchfoundation/" target="_blank"
               rel="noopener">SJSU Research Foundation</a></h3>
           <div class="meta">San Jose, CA · Sep 2024 – Present</div>
           <ul>
-            <li>Developing a <strong>vLLM-powered exploration framework</strong> for LiDAR + stereo–based AGVs.</li>
-            <li>Prototyping an <strong>LLM voice teleoperation system</strong> using ROS2 with Google Speech-to-Text.
-            </li>
-            <li>Designed and deployed a <strong>multi-modal sensor fusion pipeline</strong> on NVIDIA Orin (LiDAR +
-              stereo).</li>
-            <li>Built a <strong>LiDAR point-pillar object detection</strong> pipeline (MMDetection3D) on KITTI-360 &amp;
-              Waymo datasets.</li>
+            <li>Developed MoRAL: fine-tuned a VLM on nuScenes for 3D autonomous driving scene reasoning using BEV and radar inputs. Zone F1=0.89, composite score 0.565 vs 0.439 zero-shot 8B, emergency braking recall improved from 10.8% to 47.8%, 42 tok/s at 4.61 GB VRAM. IEEE IMC 2026 under review.</li>
+            <li>Built and deployed a full AMR autonomy stack integrating MOLA, RTAB-Map, VIO, and LiDAR SLAM. Resolved a 1,100ms latency bottleneck using NVIDIA Warp GPU-parallel kernels, restoring reliable real-world obstacle avoidance.</li>
+            <li>Integrated PointPillars 3D object detection with multi-modal LiDAR and camera sensor fusion into a ROS2 MoveIt navigation stack.</li>
+            <li>Built a collaborative perception pipeline merging two LiDAR streams using ICP, NDT, and RANSAC, achieving 88-92% point cloud overlap.</li>
+            <li>Managed a 50+ Jetson Orin/Nano fleet via Docker and SSH automation, achieving 90% fleet availability and reducing manual intervention by 40%.</li>
+            <li>Built teleop pipelines and YouTube tutorials enabling students to replicate the full AMR autonomy stack. Mentored lab members on ROS2, SLAM, and sensor fusion.</li>
           </ul>
-          <div class="chipline"><span>ROS 2</span><span>vLLM</span><span>LiDAR</span><span>Stereo
-              Vision</span><span>MMDetection3D</span><span>NVIDIA Orin</span></div>
+          <div class="chipline"><span>ROS2</span><span>VLMs</span><span>BEV Perception</span><span>ADAS</span><span>LiDAR</span><span>SLAM</span><span>PointPillars</span><span>NVIDIA Warp</span><span>nuScenes</span></div>
         </article>
 
         <!-- Smarthub.ai -->
@@ -337,15 +349,12 @@
           <h3>Software Engineer - <a href="https://smarthub.ai" target="_blank" rel="noopener">Smarthub.ai</a></h3>
           <div class="meta">Bengaluru, India · May 2021 – Jan 2024</div>
           <ul>
-            <li>Engineered an <strong>async Python IoT Docker monitoring</strong> system with 99% accuracy.</li>
-            <li>Built a <strong>Python Cloud SDK</strong> and <strong>Golang CLI</strong> for product deployment.</li>
-            <li>Optimized firmware upgrades with <strong>AsyncIO</strong> + multithreading, cutting time by ~90%.</li>
-            <li>Developed monitoring &amp; evaluation pipelines for <strong>4000+ devices</strong>, improving
-              reliability.</li>
-            <li>Wrote an <strong>OpenCV DataMatrix</strong> barcode scanner for fast CV-based capture.</li>
+            <li>Led a team of 6, mentoring 4 junior engineers, managing a physical security platform across 10K+ cameras (AXIS, Avigilon, Hanwha, ONVIF) and access control systems. Primary technical contact for 3 enterprise clients across 15K+ devices, contributing to 35% revenue growth.</li>
+            <li>Trained and deployed custom YOLO object detection models on live security camera feeds, owning the full CV training pipeline from data collection to production inference. Built an async Python IoT monitoring system with 99% accuracy, reducing false downtime alerts by 87%.</li>
+            <li>Redesigned the OTA firmware upgrade pipeline using async Python and multithreading, cutting rollout time for 1K+ devices from 5 hours to 7 minutes (97% reduction). Built Python and Golang SDKs adopted by 4K+ IoT devices.</li>
+            <li>Built a 10K-client IoT simulator using Docker to stress-test cloud-edge behavior before physical deployment, catching 25+ critical race conditions.</li>
           </ul>
-          <div class="chipline">
-            <span>Python</span><span>Go</span><span>AsyncIO</span><span>OpenCV</span><span>Docker</span></div>
+          <div class="chipline"><span>Python</span><span>Go</span><span>AsyncIO</span><span>YOLO</span><span>OpenCV</span><span>Docker</span><span>IoT</span><span>AWS</span></div>
         </article>
 
         <!-- Predigle -->
@@ -354,10 +363,10 @@
               rel="noopener">Predigle India Pvt Ltd</a></h3>
           <div class="meta">Chennai, India · Sep 2020 – Apr 2021</div>
           <ul>
-            <li>Built a <strong>full-stack app</strong> (Flask + Angular + MySQL) to rank 10M+ leads with secure RBAC.
-            </li>
+            <li>Built a B2B SaaS application called Byonic from scratch end to end, praised by customers during PoC. Worked closely with the product team using pair programming to ship features on time.</li>
+            <li>Implemented REST APIs handling over 10 million records. Migrated from raw SQL to ORM. Deployed to UAT with zero downtime. Built secure multi-tenant auth using JWT tokens.</li>
           </ul>
-          <div class="chipline"><span>Flask</span><span>Angular</span><span>MySQL</span><span>RBAC</span></div>
+          <div class="chipline"><span>Flask</span><span>Angular</span><span>MySQL</span><span>Python</span><span>JWT</span><span>Docker</span></div>
         </article>
       </div>
     </section>
