@@ -6,12 +6,12 @@
 (function () {
     // ─── Typing Animation ───
     var roles = [
-        "real-world robotic systems",
-        "autonomous navigation pipelines",
-        "sensor fusion with LiDAR",
-        "AI models that run on edge devices",
-        "open-source robotics tools",
-        "teaching videos and tutorials"
+        "perception systems for humanoid robots",
+        "autonomous driving reasoning models",
+        "sensor fusion pipelines for ADAS",
+        "VLMs that run on edge hardware",
+        "real-time data pipelines for robot learning",
+        "open-source robotics tools"
     ];
     var typedEl = document.getElementById("typed-text");
     if (typedEl) {
@@ -50,7 +50,7 @@
 
     // ─── Auto-load Latest content ───
     var MEDIUM_USER = "Ambarishgk";
-    var YT_CHANNEL_ID = "UCQiE2vnqJeYAbxBm4FiVrNw"; // AmbarishGK channel ID
+    var YT_CHANNEL_ID = "UCzENsxzEZ7HSLPrC_sEqsgw"; // AmbarishGK channel ID
     var FEED_URL = "https://medium.com/feed/@" + MEDIUM_USER;
     var MEDIUM_PROXIES = [
         "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(FEED_URL),
@@ -102,7 +102,7 @@
         if (window.PROJECTS && window.PROJECTS.length > 0) {
             var proj = window.PROJECTS.find(function (p) { return p.featured && !p.featuredOnly; }) || window.PROJECTS[0];
             cards.push(buildLatestCard("🔬", "Latest Project", proj.title, proj.description || "",
-                proj.github || "portfolio.html"));
+                proj.links && proj.links.length > 0 ? proj.links[0].url : (proj.github || "portfolio.html")));
         }
 
         if (cards.length === 0) {
@@ -111,8 +111,9 @@
                 "Imitation learning with VLMs to control a robotic arm.", "videos.html"));
             cards.push(buildLatestCard("📝", "Latest Article", "Read on Medium",
                 "Sharing insights on robotics, AI, and engineering.", "https://medium.com/@" + MEDIUM_USER));
-            cards.push(buildLatestCard("🔬", "Latest Project", "Multi-Modal Sensor Fusion",
-                "LiDAR + stereo cameras for real-time 3D mapping.", "portfolio.html"));
+            cards.push(buildLatestCard("🔬", "Latest Project", "MoRAL: VLM for Autonomous Driving",
+                "Fine-tuned VLM for 3D autonomous driving scene reasoning. Zone F1=0.89, IEEE IMC 2026.",
+                "https://huggingface.co/AmbarishGK/moral-v4-nuscenes"));
         }
 
         container.innerHTML = cards.join("");
@@ -200,7 +201,7 @@
     // Fetch YouTube subscriber count
     // Tries free third-party APIs, then falls back to a hardcoded value.
     // UPDATE THE FALLBACK below periodically to keep it accurate.
-    var YT_SUB_FALLBACK = "118"; // ← Update this number when your subs grow!
+    var YT_SUB_FALLBACK = "143"; // Update this when your subs grow
 
     function fetchYTSubscribers() {
         var subEl = document.getElementById("stat-subscribers");
@@ -210,7 +211,6 @@
         fetch("https://mixerno.space/api/youtube-channel-counter/current/" + YT_CHANNEL_ID)
             .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
             .then(function (data) {
-                // Mixerno returns counts array, first item is usually subscribers
                 if (data && data.counts && data.counts.length > 0) {
                     var subs = data.counts[0].count;
                     subEl.textContent = formatSubCount(subs);
@@ -226,7 +226,6 @@
                         } else { throw new Error(); }
                     })
                     .catch(function () {
-                        // Fallback to hardcoded value
                         subEl.textContent = YT_SUB_FALLBACK;
                     });
             });

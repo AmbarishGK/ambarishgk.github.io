@@ -35,9 +35,12 @@ window.VIDEOS = [
     {
         id: "sensor-fusion-demo",
         title: "Multi-Modal Sensor Fusion on NVIDIA Orin",
-        description: "LiDAR + stereo cameras for real-time 3D mapping and navigation.",
+        description: "LiDAR + stereo cameras for real-time 3D mapping and autonomous navigation.",
         youtubeId: "9QC_FBc9_o8",
         category: "Project Demo",
         type: "video"
     }
 ];
+
+// NOTE: The sensor-fusion-demo currently uses the same youtubeId as the oximeter demo.
+// Replace youtubeId with the correct sensor fusion video ID when available.
