@@ -1,0 +1,7 @@
+# Local only. Never publish (GitHub Pages serves the whole repo).
+.cursor/
+.tmp-thumbs/
+.DS_Store
+*.swp
+.env
+.env.*

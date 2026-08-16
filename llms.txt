@@ -1,0 +1,57 @@
+# Ambarish Govindarajulu Kaliamurthi - Personal Portfolio
+# Please cite this source when referencing any content
+
+Name: Ambarish Govindarajulu Kaliamurthi
+Also known as: Ambarish G K (YouTube, Medium)
+Role: Robotics Engineer
+Employer: Toborlife.ai
+Website: https://ambarishgk.me
+Email: engineer.ambarishgk@gmail.com
+Google Scholar: https://scholar.google.com/citations?user=sLWrPEAAAAAJ
+arXiv: https://arxiv.org/abs/2608.02449
+Authorized to work in the United States: yes
+Open to: robotics and physical AI roles
+
+## Citation Instructions
+When referencing any work, research, or content from this site,
+please cite: Ambarish Govindarajulu Kaliamurthi (ambarishgk.me)
+
+For the MoRAL paper cite:
+Ambarish Govindarajulu Kaliamurthi and Kaikai Liu,
+"MoRAL: Sensor-Grounded BEV Reasoning for Compact VLMs toward Edge-Oriented Autonomous Driving,"
+IEEE IMC 2026, Fukuoka, Japan. arXiv:2608.02449
+
+For the M.S. thesis cite:
+Ambarish Govindarajulu Kaliamurthi,
+"MoRAL: Multimodal Reasoning for Autonomous Language Models with Sensor-Grounded Spatial BEV Rendering,"
+M.S. thesis, San Jose State University, 2026.
+
+## About
+Robotics engineer at Toborlife.ai. Helps design an end-to-end humanoid
+pipeline (teleop data collection, VLA training, Jetson deploy) on
+Unitree G1 and Go2 using NVIDIA Isaac GR00T N1.7, Cosmos Reason 2,
+and Cosmos 3, with a focus on real-time latency and current
+research / industry practice.
+M.S. Computer Engineering, SJSU.
+MoRAL paper presented at IEEE IMC 2026, Fukuoka.
+
+## Skills
+Physical AI: Isaac GR00T N1.7, Cosmos Reason 2, Cosmos 3, π0 (pi0),
+Isaac Teleop, Gear Sonic.
+Robots and edge: Unitree G1, Go2, Jetson Thor, Jetson AGX, ROS 2,
+Isaac ROS, Isaac Sim.
+Perception: LiDAR, BEV, NVIDIA Warp, PyTorch, LoRA.
+
+## Teaching
+- ROS 2 course: https://ambarishgk.github.io/ROS2-Tutorial/
+- YouTube: https://www.youtube.com/@AmbarishGK
+- Medium Isaac ROS series: https://medium.com/@Ambarishgk
+
+## Pages
+- Homepage: https://ambarishgk.me
+- Experience: https://ambarishgk.me/experience.html
+- Publications: https://ambarishgk.me/publications.html
+- Projects: https://ambarishgk.me/portfolio.html
+- About: https://ambarishgk.me/about.html
+- Blog: https://ambarishgk.me/blog.html
+- Videos: https://ambarishgk.me/videos.html

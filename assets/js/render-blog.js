@@ -34,7 +34,14 @@
     function extractImage(content) {
         if (!content) return "";
         var match = content.match(/<img[^>]+src=["']([^"']+)["']/);
-        return match ? match[1] : "";
+        if (!match) return "";
+        try {
+            var u = new URL(match[1], "https://medium.com");
+            if (u.protocol !== "https:") return "";
+            return u.href;
+        } catch (err) {
+            return "";
+        }
     }
 
     function renderCards(container, items) {
@@ -92,6 +99,7 @@
     }
 
     function renderFallback(container) {
+        if (container.querySelector("article, .card")) return;
         container.innerHTML =
             '<div style="text-align:center;padding:2rem 1rem;color:#888;">' +
             "<p>Couldn't load articles right now.</p>" +

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <script>
+    window.goatcounter = {
+      no_events: true,
+      allow_local: /^(localhost|127\.0\.0\.1)$/.test(location.hostname)
+    };
+  </script>
+  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Publications | Ambarish Govindarajulu Kaliamurthi | IEEE IMC 2026</title>
+  <meta name="description"
+    content="Publications by Ambarish Govindarajulu Kaliamurthi: MoRAL paper (IEEE IMC 2026, Fukuoka; arXiv:2608.02449) and M.S. thesis on sensor-grounded BEV reasoning for compact VLMs." />
+  <meta name="author" content="Ambarish Govindarajulu Kaliamurthi" />
+  <link rel="canonical" href="https://ambarishgk.me/publications.html" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Publications | Ambarish Govindarajulu Kaliamurthi" />
+  <meta property="og:description"
+    content="MoRAL paper presented at IEEE IMC 2026, Fukuoka, and M.S. thesis on sensor-grounded BEV reasoning." />
+  <meta property="og:url" content="https://ambarishgk.me/publications.html" />
+  <meta property="og:image" content="https://ambarishgk.me/assets/img/me.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@AmbarishGK1" />
+
+  <meta name="citation_author" content="Ambarish Govindarajulu Kaliamurthi">
+  <meta name="citation_author" content="Kaikai Liu">
+  <meta name="citation_title" content="MoRAL: Sensor-Grounded BEV Reasoning for Compact VLMs toward Edge-Oriented Autonomous Driving">
+  <meta name="citation_arxiv_id" content="2608.02449">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="IEEE IMC 2026">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2608.02449">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <script>
+    (function () {
+      var s = localStorage.getItem('theme');
+      if (s === 'dark' || (!s && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">AGK</a>
+    <nav class="site-nav" id="nav">
+      <a href="/">Home</a>
+      <a href="experience.html">Experience</a>
+      <a class="active" aria-current="page" href="publications.html">Publications</a>
+      <a href="portfolio.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="videos.html">Videos</a>
+    </nav>
+    <div class="right-ctas">
+      <button class="theme-toggle" id="themeToggle" aria-label="Current theme: Light. Switch to dark">🌞</button>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="section">
+      <h1>Publications</h1>
+      <p style="text-align:center; max-width:640px; margin:0 auto 1.5rem; color:#555; font-size:.98rem;">
+        Paper and thesis on MoRAL. Presented at IEEE IMC 2026 in Fukuoka. Google Scholar lists the thesis twice, so you may see three rows.
+      </p>
+
+      <article class="card pub-card fade-up">
+        <h3>MoRAL: Sensor-Grounded BEV Reasoning for Compact VLMs toward Edge-Oriented Autonomous Driving</h3>
+        <p class="pub-venue">Ambarish Govindarajulu Kaliamurthi, Kaikai Liu · IEEE IMC 2026, Fukuoka, Japan (presented) · arXiv:2608.02449</p>
+        <p class="pub-result">NVIDIA Cosmos Reason 2, trained in two stages: first it learns to read a bird's-eye view we render from LiDAR and radar, then it learns driving reasoning (what is approaching, whether to brake). Presented at IEEE IMC 2026 in Fukuoka.</p>
+        <figure class="pub-figure">
+          <picture>
+            <source type="image/webp" srcset="assets/img/bev-640.webp 640w, assets/img/bev-960.webp 960w" sizes="(max-width: 680px) calc(100vw - 2rem), 520px">
+            <img src="assets/img/bev.jpg" width="640" height="640" alt="Bird's-eye-view sensor plot: ego vehicle at center, LiDAR points and tracked objects around it" loading="lazy" decoding="async" fetchpriority="low">
+          </picture>
+          <figcaption>Bird's-eye view of a driving scene used in MoRAL</figcaption>
+        </figure>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2608.02449" target="_blank" rel="noopener" data-goatcounter-click="arxiv-moral">arXiv</a>
+          <a href="https://arxiv.org/pdf/2608.02449" target="_blank" rel="noopener" data-goatcounter-click="arxiv-moral-pdf">PDF</a>
+          <a href="https://scholar.google.com/citations?user=sLWrPEAAAAAJ" target="_blank" rel="noopener" data-goatcounter-click="scholar">Google Scholar</a>
+        </div>
+      </article>
+
+      <article class="card pub-card fade-up">
+        <h3>MoRAL: Multimodal Reasoning for Autonomous Language Models with Sensor-Grounded Spatial BEV Rendering</h3>
+        <p class="pub-venue">Ambarish Govindarajulu Kaliamurthi · M.S. thesis · San Jose State University · May 2026 · Advisor: Dr. Kaikai Liu</p>
+        <p class="pub-result">Thesis that developed the MoRAL pipeline: physics-encoded BEV from LiDAR and radar, two-stage LoRA fine-tuning of Cosmos-Reason2-2B, and edge evaluation on nuScenes.</p>
+        <div class="pub-links">
+          <a href="https://scholarworks.sjsu.edu/etd_theses/" target="_blank" rel="noopener" data-goatcounter-click="scholarworks-thesis">SJSU ScholarWorks</a>
+          <a href="https://scholar.google.com/citations?user=sLWrPEAAAAAJ" target="_blank" rel="noopener" data-goatcounter-click="scholar">Google Scholar</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <a class="fab-contact" href="mailto:engineer.ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
+    aria-label="Contact me" rel="noopener" data-goatcounter-click="email-fab">
+    <svg class="msg-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor"
+        d="M2 5.75C2 4.78 2.78 4 3.75 4h16.5C21.22 4 22 4.78 22 5.75v12.5c0 .97-.78 1.75-1.75 1.75H7.4l-3.54 2.36A.75.75 0 0 1 2 21.97V5.75Zm1.5.75v9.5h16V6.5l-7.24 4.83a2.5 2.5 0 0 1-2.52 0L3.5 6.5Zm.94-1.5 7.31 4.88a1 1 0 0 0 1.0 0L20.06 5.75H4.44Z" />
+    </svg>
+    <span class="fab-label">Contact me</span>
+  </a>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ambarish Govindarajulu Kaliamurthi</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <div class="page-transition" id="page-transition"></div>
+  <script src="assets/js/enhancements.js" defer></script>
+</body>
+
+</html>

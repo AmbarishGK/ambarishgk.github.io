@@ -2,10 +2,16 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+      window.goatcounter = {
+        no_events: true,
+        allow_local: /^(localhost|127\.0\.0\.1)$/.test(location.hostname)
+      };
+    </script>
+    <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Blog | Ambarish G K</title>
+    <title>Blog | Ambarish Govindarajulu Kaliamurthi</title>
     <meta name="description"
         content="Articles and tutorials by Ambarish G K on robotics, AI, sensor fusion, embedded systems, and engineering." />
     <meta name="keywords"
@@ -27,7 +33,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <script>
         (function () {
@@ -81,61 +87,6 @@
             display: flex;
             gap: .5rem;
             align-items: center
-        }
-
-        .loader-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #f5f6fa;
-            transition: opacity .45s ease, visibility .45s ease
-        }
-
-        .loader-overlay.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none
-        }
-
-        .loader-logo {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #3c58a6;
-            animation: pulse 1.2s ease-in-out infinite
-        }
-
-        .loader-tagline {
-            margin-top: .5rem;
-            font-size: .85rem;
-            color: #888;
-            letter-spacing: .5px
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: .4;
-                transform: scale(.96)
-            }
-
-            50% {
-                opacity: 1;
-                transform: scale(1)
-            }
-        }
-
-        :root[data-theme="dark"] .loader-overlay {
-            background: #15171a
-        }
-
-        :root[data-theme="dark"] .loader-logo {
-            color: #8bb8ff
         }
 
         :root[data-theme="dark"] .site-header {
@@ -207,26 +158,20 @@
         }
     </style>
 
-    <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="main.css">
-    </noscript>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <div class="loader-overlay" id="loader">
-        <div class="loader-logo">AGK</div>
-        <div class="loader-tagline">Robotics · AI · Builder · Mentor</div>
-    </div>
-
     <header class="site-header">
         <a class="logo" href="/">AGK</a>
         <nav class="site-nav" id="nav">
             <a href="/">Home</a>
+            <a href="experience.html">Experience</a>
+            <a href="publications.html">Publications</a>
             <a href="portfolio.html">Projects</a>
+            <a href="about.html">About</a>
             <a class="active" aria-current="page" href="blog.html">Blog</a>
             <a href="videos.html">Videos</a>
-            <a href="about.html">About</a>
         </nav>
         <div class="right-ctas">
             <button class="theme-toggle" id="themeToggle" aria-label="Current theme: Light. Switch to dark">🌞</button>
@@ -238,30 +183,47 @@
         <section class="section">
             <h1>Blog</h1>
             <p style="text-align:center; max-width:640px; margin:0 auto 1.5rem; color:#555; font-size:.98rem;">
-                Articles and tutorials on robotics, AI, embedded systems, and engineering.
-                Writing about what I build and learn.
+                Writeups on Isaac ROS, Jetson, and bird's-eye-view perception. Longer posts live on Medium.
             </p>
-            <p style="text-align:center; margin-bottom:1.5rem;">
+            <div class="grid cards" id="blog-pinned">
+                <article class="card">
+                    <h3><a href="https://medium.com/@AmbarishGK/the-isaac-ros-complete-guide-part-1-flashing-jetson-os-to-your-jetson-orin-nano-developer-kit-923502da1d87" target="_blank" rel="noopener">Isaac ROS guide, part 1</a></h3>
+                    <p>Flashing Jetson OS on an Orin Nano so the board is ready for robotics.</p>
+                </article>
+                <article class="card">
+                    <h3><a href="https://medium.com/@AmbarishGK/the-isaac-ros-complete-guide-part-2-installing-ros-2-humble-on-nvidia-jetson-orin-f7b516cdcc27" target="_blank" rel="noopener">Isaac ROS guide, part 2</a></h3>
+                    <p>Installing ROS 2 Humble on Jetson Orin.</p>
+                </article>
+                <article class="card">
+                    <h3><a href="https://medium.com/@AmbarishGK/the-isaac-ros-complete-guide-part-3-zed-camera-integration-with-ros-2-humble-on-jetson-orin-c9523bc3cbee" target="_blank" rel="noopener">Isaac ROS guide, part 3</a></h3>
+                    <p>ZED camera with ROS 2 Humble on Jetson Orin.</p>
+                </article>
+            </div>
+            <p style="text-align:center; margin: 1rem 0;">
                 <a href="https://medium.com/feed/@Ambarishgk" target="_blank" rel="noopener"
                     style="display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;color:#f90;text-decoration:none;font-weight:600;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#f90">
-                        <path
-                            d="M6.18 15.64a2.18 2.18 0 1 1 0-4.36 2.18 2.18 0 0 1 0 4.36zM4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44zm0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93v-2.83z" />
-                    </svg>
                     RSS Feed
                 </a>
             </p>
 
             <div class="grid cards" id="blog-posts">
-                <div class="blog-loading">
-                    <div class="spinner"></div>
-                    <p>Loading articles…</p>
-                </div>
+                <article class="card">
+                    <h3><a href="https://medium.com/@AmbarishGK/chatting-with-your-chassis-when-robots-stop-detecting-boxes-and-start-understanding-intentions-b5e6e4d0c5ba" target="_blank" rel="noopener">Chatting with your chassis</a></h3>
+                    <p>When robots stop detecting boxes and start understanding intentions.</p>
+                </article>
+                <article class="card">
+                    <h3><a href="https://medium.com/@AmbarishGK/beyond-seeing-why-world-models-are-the-brains-of-future-robotics-73e1e9df7952" target="_blank" rel="noopener">Why world models matter</a></h3>
+                    <p>World models as the brains of future robotics.</p>
+                </article>
+                <article class="card">
+                    <h3><a href="https://medium.com/@AmbarishGK/the-philosophical-shift-why-birds-eye-view-is-the-new-shared-language-of-avs-e9df059a0292" target="_blank" rel="noopener">Bird's-eye view as a shared language</a></h3>
+                    <p>Why BEV is the shared language of autonomous vehicles.</p>
+                </article>
             </div>
         </section>
     </main>
 
-    <a class="fab-contact" href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
+    <a class="fab-contact" href="mailto:engineer.ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
         aria-label="Contact me" rel="noopener">
         <svg class="msg-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="currentColor"

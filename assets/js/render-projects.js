@@ -28,6 +28,8 @@
       items = items.filter(filterFn);
     }
 
+    if (!items.length) return;
+
     items.sort(function (a, b) {
       return (a.order || 0) - (b.order || 0);
     });
@@ -39,13 +41,22 @@
         // type "short" gets vertical aspect ratio automatically
         var isShort = p.type === "short";
 
-        var youtubeTag = hasVideo
-          ? '<lite-youtube videoid="' +
-          escapeHtml(p.youtubeId) +
-          '" params="modestbranding=1&rel=0&playsinline=1"' +
-          (isShort ? ' class="vertical"' : "") +
-          "></lite-youtube>"
-          : "";
+        var mediaTag = "";
+        if (p.image) {
+          mediaTag =
+            '<div class="card-media"><img src="' +
+            escapeHtml(p.image) +
+            '" alt="' +
+            escapeHtml(p.imageAlt || p.title) +
+            '" width="960" height="540" loading="lazy" decoding="async"></div>';
+        } else if (hasVideo) {
+          mediaTag =
+            '<lite-youtube videoid="' +
+            escapeHtml(p.youtubeId) +
+            '" params="modestbranding=1&rel=0&playsinline=1"' +
+            (isShort ? ' class="vertical"' : "") +
+            "></lite-youtube>";
+        }
 
         // Build links section: GitHub + any extra links
         var linkItems = [];
@@ -76,8 +87,8 @@
 
         return (
           '<article class="card">' +
+          mediaTag +
           "<h3>" + escapeHtml(p.title) + "</h3>" +
-          youtubeTag +
           (p.description ? "<p>" + escapeHtml(p.description) + "</p>" : "") +
           (techLine ? '<p class="tech">' + escapeHtml(techLine) + "</p>" : "") +
           linksHtml +

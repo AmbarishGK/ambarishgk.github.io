@@ -15,11 +15,8 @@
             var link = e.target.closest('a');
             if (!link) return;
             var href = link.getAttribute('href');
-            // Only transition for internal links (not mailto, external, anchors)
             if (!href || href.startsWith('mailto:') || href.startsWith('http') || href.startsWith('#') || link.target === '_blank') return;
-            e.preventDefault();
-            transition.classList.add('active');
-            setTimeout(function () { window.location.href = href; }, 300);
+            if (transition) transition.classList.add('active');
         });
     }
 
@@ -27,10 +24,12 @@
     // Press 1-5 to jump to pages, ? to show help
     var NAV_KEYS = {
         '1': '/',
-        '2': 'portfolio.html',
-        '3': 'blog.html',
-        '4': 'videos.html',
-        '5': 'about.html'
+        '2': 'experience.html',
+        '3': 'publications.html',
+        '4': 'portfolio.html',
+        '5': 'about.html',
+        '6': 'blog.html',
+        '7': 'videos.html'
     };
 
     document.addEventListener('keydown', function (e) {
@@ -73,10 +72,12 @@
             '<div class="kb-help-modal">' +
             '<h3>Keyboard Shortcuts</h3>' +
             '<div class="kb-row"><kbd>1</kbd> Home</div>' +
-            '<div class="kb-row"><kbd>2</kbd> Projects</div>' +
-            '<div class="kb-row"><kbd>3</kbd> Blog</div>' +
-            '<div class="kb-row"><kbd>4</kbd> Videos</div>' +
+            '<div class="kb-row"><kbd>2</kbd> Experience</div>' +
+            '<div class="kb-row"><kbd>3</kbd> Publications</div>' +
+            '<div class="kb-row"><kbd>4</kbd> Projects</div>' +
             '<div class="kb-row"><kbd>5</kbd> About</div>' +
+            '<div class="kb-row"><kbd>6</kbd> Blog</div>' +
+            '<div class="kb-row"><kbd>7</kbd> Videos</div>' +
             '<div class="kb-row"><kbd>?</kbd> Toggle this help</div>' +
             '<div class="kb-row"><kbd>Esc</kbd> Close</div>' +
             '<p class="kb-hint">Press Esc or ? to close</p>' +
@@ -149,6 +150,53 @@
         // Also try on load
         addReadingTime();
     }
+
+    // ─── GoatCounter: outbound / email / resume clicks on every page ───
+    function goatEvent(name) {
+        if (!name) return;
+        var tries = 0;
+        var send = function () {
+            if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+                window.goatcounter.count({ path: name, title: document.title, event: true });
+            } else if (tries++ < 20) {
+                setTimeout(send, 250);
+            }
+        };
+        send();
+    }
+
+    function clickNameForLink(link) {
+        var named = link.getAttribute('data-goatcounter-click');
+        if (named) return named;
+        var href = link.getAttribute('href');
+        if (!href) return null;
+        if (href.indexOf('mailto:') === 0) {
+            return link.classList.contains('fab-contact') ? 'email-fab' : 'email';
+        }
+        if (href.indexOf('Ambarish_Resume') !== -1 || /\.pdf($|\?)/i.test(href)) return 'resume';
+        var url;
+        try { url = new URL(href, window.location.href); } catch (err) { return null; }
+        if (url.origin === window.location.origin) return null;
+        var host = url.hostname.replace(/^www\./, '');
+        if (host === 'github.com' || host === 'ambarishgk.github.io') {
+            if (url.pathname.indexOf('ROS2-Tutorial') !== -1) return 'ros2-course';
+            return 'github';
+        }
+        if (host.indexOf('linkedin.com') !== -1) return 'linkedin';
+        if (host.indexOf('youtube.com') !== -1 || host === 'youtu.be') return 'youtube';
+        if (host.indexOf('medium.com') !== -1) return 'medium';
+        if (host.indexOf('arxiv.org') !== -1) return 'arxiv-moral';
+        if (host.indexOf('scholar.google') !== -1) return 'scholar';
+        if (host.indexOf('toborlife') !== -1) return 'toborlife';
+        if (host.indexOf('sjsu.edu') !== -1) return 'sjsu';
+        return 'out-' + host;
+    }
+
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href], [data-goatcounter-click]');
+        if (!link) return;
+        goatEvent(clickNameForLink(link));
+    });
 
     // ─── On DOMContentLoaded ───
     document.addEventListener('DOMContentLoaded', function () {

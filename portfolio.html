@@ -2,10 +2,16 @@
 <html lang="en" data-theme="light">
 
 <head>
-  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    window.goatcounter = {
+      no_events: true,
+      allow_local: /^(localhost|127\.0\.0\.1)$/.test(location.hostname)
+    };
+  </script>
+  <script data-goatcounter="https://ambarishgk007.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects | Ambarish G K | Physical AI Engineer</title>
+  <title>Projects | Ambarish Govindarajulu Kaliamurthi | Physical AI</title>
   <meta name="description"
     content="Projects by Ambarish G K spanning humanoid robots, autonomous driving, BEV perception, VLMs, sensor fusion, ROS2, and systems engineering." />
   <meta name="keywords"
@@ -24,7 +30,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
   <script>
     (function () {
@@ -78,61 +84,6 @@
       display: flex;
       gap: .5rem;
       align-items: center
-    }
-
-    .loader-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #f5f6fa;
-      transition: opacity .45s ease, visibility .45s ease
-    }
-
-    .loader-overlay.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none
-    }
-
-    .loader-logo {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #3c58a6;
-      animation: pulse 1.2s ease-in-out infinite
-    }
-
-    .loader-tagline {
-      margin-top: .5rem;
-      font-size: .85rem;
-      color: #888;
-      letter-spacing: .5px
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: .4;
-        transform: scale(.96)
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1)
-      }
-    }
-
-    :root[data-theme="dark"] .loader-overlay {
-      background: #15171a
-    }
-
-    :root[data-theme="dark"] .loader-logo {
-      color: #8bb8ff
     }
 
     :root[data-theme="dark"] .site-header {
@@ -204,26 +155,20 @@
     }
   </style>
 
-  <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="main.css">
-  </noscript>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-  <div class="loader-overlay" id="loader">
-    <div class="loader-logo">AGK</div>
-    <div class="loader-tagline">Robotics · AI · Builder · Mentor</div>
-  </div>
-
   <header class="site-header">
     <a class="logo" href="/">AGK</a>
     <nav class="site-nav" id="nav">
       <a href="/">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="publications.html">Publications</a>
       <a class="active" aria-current="page" href="portfolio.html">Projects</a>
+      <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
       <a href="videos.html">Videos</a>
-      <a href="about.html">About</a>
     </nav>
     <div class="right-ctas">
       <button class="theme-toggle" id="themeToggle" aria-label="Current theme: Light. Switch to dark">🌞</button>
@@ -235,13 +180,110 @@
     <section class="section">
       <h1>Projects</h1>
       <p style="text-align:center; max-width:640px; margin:0 auto 1.5rem; color:#555; font-size:.98rem;">
-        A mix of robotics perception, autonomous driving research, humanoid robot systems, and AI tooling. Many projects have short videos attached so you can quickly see them in action.
+        A mix of research, robot software, and teaching notes.
       </p>
-      <div class="grid cards" id="all-projects"></div>
+      <div class="grid cards" id="all-projects">
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/bev-640.webp" alt="Bird's-eye view of a driving scene used by MoRAL" width="640" height="640" loading="lazy" decoding="async">
+          </div>
+          <h3>MoRAL: VLM for Autonomous Driving and ADAS Reasoning</h3>
+          <p>NVIDIA Cosmos Reason 2: first it learns to read a bird's-eye view from LiDAR and radar, then it reasons about driving decisions. Presented at IEEE IMC 2026 in Fukuoka.</p>
+          <p class="tech">PyTorch · VLMs · nuScenes · BEV · LoRA</p>
+          <div class="card-links"><a href="https://arxiv.org/abs/2608.02449" target="_blank" rel="noopener">arXiv</a></div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/ros2.webp" alt="ROS 2 course" width="960" height="480" loading="lazy" decoding="async">
+          </div>
+          <h3>ROS 2 connected course</h3>
+          <p>ROS 2 notes I used while teaching: first node through Nav2, plus Jetson vision.</p>
+          <p class="tech">ROS2 · MkDocs · Gazebo · Nav2 · Jetson</p>
+          <div class="card-links">
+            <a href="https://ambarishgk.github.io/ROS2-Tutorial/" target="_blank" rel="noopener">Course</a>
+            <a href="https://github.com/AmbarishGK/ROS2-Tutorial" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/isaac-sim.webp" alt="Isaac Sim running in Docker" width="960" height="540" loading="lazy" decoding="async">
+          </div>
+          <h3>Isaac Sim in Docker</h3>
+          <p>Run Isaac Sim in Docker and stream it over WebRTC so you don't need a local GUI install.</p>
+          <p class="tech">Isaac Sim · Docker · WebRTC</p>
+          <div class="card-links"><a href="https://www.youtube.com/watch?v=edUEm0siXvE" target="_blank" rel="noopener">Video</a></div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/ps5.webp" alt="PS5 DualSense ROS 2 wrapper" width="960" height="480" loading="lazy" decoding="async">
+          </div>
+          <h3>PS5 DualSense ROS2 wrapper</h3>
+          <p>Haptics, sensors, and touchpad for humanoid and robot teleoperation.</p>
+          <p class="tech">ROS2 · C++ · Python</p>
+          <div class="card-links"><a href="https://github.com/AmbarishGK/joy_ps5_ros2" target="_blank" rel="noopener">Source</a></div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/bevformer.webp" alt="Bird's-eye-view detection from cameras" width="960" height="540" loading="lazy" decoding="async">
+          </div>
+          <h3>Multi-modal sensor fusion</h3>
+          <p>LiDAR plus cameras for real-time mapping and detection on NVIDIA Orin.</p>
+          <p class="tech">ROS2 · ORB-SLAM3 · NvBlox · LiDAR</p>
+          <div class="card-links">
+            <a href="https://www.youtube.com/watch?v=dGrRYSjbxJU" target="_blank" rel="noopener">Demo</a>
+            <a href="https://github.com/AmbarishGK/Nvidia-Isaac-ROS" target="_blank" rel="noopener">Notes</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/lidar.webp" alt="LiDAR calibration for indoor AV" width="960" height="480" loading="lazy" decoding="async">
+          </div>
+          <h3>LiDAR calibration for indoor AV</h3>
+          <p>Base-station LiDAR with a vehicle LiDAR for indoor autonomous driving (I2V).</p>
+          <p class="tech">LiDAR · Calibration · ROS2</p>
+          <div class="card-links"><a href="https://github.com/AmbarishGK/Lidar-Calibration-and-fusion" target="_blank" rel="noopener">Source</a></div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/lerobot.webp" alt="LeRobot imitation learning on an SO-101 arm" width="960" height="540" loading="lazy" decoding="async">
+          </div>
+          <h3>LeRobot imitation learning</h3>
+          <p>Imitation learning on an SO-101 arm at a Hugging Face LeRobot hackathon.</p>
+          <p class="tech">Python · LeRobot</p>
+          <div class="card-links"><a href="https://www.youtube.com/shorts/hojM0j5xG-c" target="_blank" rel="noopener">Short</a></div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/iot.webp" alt="IoT Trojan Image Scanner" width="960" height="480" loading="lazy" decoding="async">
+          </div>
+          <h3>IoT Trojan Image Scanner</h3>
+          <p>Detects trojanized images through anomaly and file-integrity analysis.</p>
+          <p class="tech">Python · OpenCV · Docker</p>
+          <div class="card-links"><a href="https://github.com/AmbarishGK/IoT-Trojan-image-scanner" target="_blank" rel="noopener">Source</a></div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/therobotsim.webp" alt="TheRobotSim IoT simulator" width="960" height="480" loading="lazy" decoding="async">
+          </div>
+          <h3>TheRobotSim: IoT Simulator</h3>
+          <p>Hardware-aware simulator for IoT devices and robotic agents.</p>
+          <p class="tech">Go · HTML · IoT</p>
+          <div class="card-links"><a href="https://github.com/AmbarishGK/therobotsim" target="_blank" rel="noopener">Source</a></div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="assets/img/projects/isaac-ros-zed.webp" alt="ZED camera with Isaac ROS" width="960" height="540" loading="lazy" decoding="async">
+          </div>
+          <h3>ZED Camera 3D Mapping</h3>
+          <p>ZED camera on Jetson Nano for 3D maps used in autonomous navigation.</p>
+          <p class="tech">Python · NVIDIA Jetson · ZED SDK</p>
+          <div class="card-links"><a href="https://github.com/AmbarishGK/ZED-jetson" target="_blank" rel="noopener">Source</a></div>
+        </article>
+      </div>
     </section>
   </main>
 
-  <a class="fab-contact" href="mailto:ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
+  <a class="fab-contact" href="mailto:engineer.ambarishgk@gmail.com?subject=Hello%20Ambarish&body=Hi%20Ambarish%2C%0A%0A"
     aria-label="Contact me" rel="noopener">
     <svg class="msg-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path fill="currentColor"
@@ -254,10 +296,7 @@
     <p>© <span id="year"></span> Ambarish G K</p>
   </footer>
 
-  <script src="assets/data/projects.js"></script>
-  <script src="assets/js/lite-youtube.js" defer></script>
   <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/render-projects.js" defer></script>
   <div class="page-transition" id="page-transition"></div>
   <script src="assets/js/enhancements.js" defer></script>
 </body>

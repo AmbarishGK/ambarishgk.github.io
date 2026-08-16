@@ -1,0 +1,30 @@
+/* TEAM */
+Name: Ambarish Govindarajulu Kaliamurthi
+Also known as: Ambarish G K
+Role: Robotics Engineer
+Location: San Jose, California, United States
+Site: https://ambarishgk.me
+Email: engineer.ambarishgk@gmail.com
+LinkedIn: https://www.linkedin.com/in/ambarishgk/
+GitHub: https://github.com/AmbarishGK
+Google Scholar: https://scholar.google.com/citations?user=sLWrPEAAAAAJ
+YouTube: https://www.youtube.com/@AmbarishGK
+Medium: https://medium.com/@Ambarishgk
+
+/* WORK */
+Employer: Toborlife.ai
+Title: Robotics Engineer (full-time, July 2026 to present)
+Previous: Robotics Engineering Intern, Toborlife.ai (Feb 2026 to May 2026)
+Authorized to work in the United States: yes
+Open to: robotics and physical AI roles
+
+/* EDUCATION */
+M.S. Computer Engineering, San Jose State University, May 2026
+Advisor: Dr. Kaikai Liu
+Thesis: MoRAL: Multimodal Reasoning for Autonomous Language Models with Sensor-Grounded Spatial BEV Rendering
+
+/* PUBLICATIONS */
+Paper: MoRAL: Sensor-Grounded BEV Reasoning for Compact VLMs toward Edge-Oriented Autonomous Driving
+Authors: Ambarish Govindarajulu Kaliamurthi, Kaikai Liu
+Venue: IEEE IMC 2026, Fukuoka, Japan (presented)
+Preprint: https://arxiv.org/abs/2608.02449

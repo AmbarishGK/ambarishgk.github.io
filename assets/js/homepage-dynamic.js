@@ -113,7 +113,7 @@
                 "Sharing insights on robotics, AI, and engineering.", "https://medium.com/@" + MEDIUM_USER));
             cards.push(buildLatestCard("🔬", "Latest Project", "MoRAL: VLM for Autonomous Driving",
                 "Fine-tuned VLM for 3D autonomous driving scene reasoning. Zone F1=0.89, IEEE IMC 2026.",
-                "https://huggingface.co/AmbarishGK/moral-v4-nuscenes"));
+                "https://arxiv.org/abs/2608.02449"));
         }
 
         container.innerHTML = cards.join("");
@@ -181,9 +181,7 @@
                         desc: desc.slice(0, 120),
                         url: "https://www.youtube.com/watch?v=" + videoId
                     };
-                    // Update video count
-                    var statEl = document.getElementById("stat-videos");
-                    if (statEl) statEl.textContent = entries.length;
+                    // Keep the channel-level video count; RSS length is not the channel size.
                 }
                 checkAndRender();
             })
@@ -201,7 +199,7 @@
     // Fetch YouTube subscriber count
     // Tries free third-party APIs, then falls back to a hardcoded value.
     // UPDATE THE FALLBACK below periodically to keep it accurate.
-    var YT_SUB_FALLBACK = "143"; // Update this when your subs grow
+    var YT_SUB_FALLBACK = "164";
 
     function fetchYTSubscribers() {
         var subEl = document.getElementById("stat-subscribers");

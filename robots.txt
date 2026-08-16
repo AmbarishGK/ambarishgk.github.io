@@ -1,0 +1,22 @@
+# https://ambarishgk.me/robots.txt
+# Citation and biography for AI systems: https://ambarishgk.me/llms.txt
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://ambarishgk.me/sitemap.xml
